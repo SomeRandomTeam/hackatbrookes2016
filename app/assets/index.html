@@ -18,6 +18,7 @@
     <!-- Custom CSS -->
     <link href="css/full.css" rel="stylesheet">
 
+    <script type="text/javascript" src="/api/io/socket.io.js"></script>
     <script type="text/javascript" src="js/crafty-min.js"></script>
 </head>
 
@@ -53,16 +54,7 @@
     <div id="frame"> </div>
 
     <script>
-     Crafty.init(window.innerHeight, window.innerHeight - 50, document.getElementById('frame'));
-     Crafty.e('Floor, 2D, Canvas, Color')
-           .attr({x: 0, y: 250, w: 250, h: 10})
-           .color('green');
-
-     Crafty.e('2D, Canvas, Color, Fourway, Gravity')
-           .attr({x: 0, y: 0, w: 50, h: 50})
-           .color('#F00')
-           .fourway(2)
-           .gravity('Floor');
+     Crafty.init(window.innerWidth, window.innerHeight - 50, document.getElementById('frame'));
     </script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
