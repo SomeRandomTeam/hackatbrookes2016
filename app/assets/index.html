@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="full" lang="en">
 <!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
 
 <head>
@@ -52,6 +52,10 @@
     <!-- Put your page content here! -->
     <div id="frame"> </div>
 
+    <script>
+     Crafty.init(window.innerHeight, window.innerHeight - 50, document.getElementById('frame'));
+     Crafty.e('2D, DOM, Color').attr({x:0, y:0, w:100, h:100}).color('#F00');
+    </script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
