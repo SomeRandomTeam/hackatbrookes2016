@@ -1,5 +1,6 @@
 require('dotenv').load()
 
+var http = require('http')
 var path = require('path')
 
 var express = require('express')
@@ -10,7 +11,12 @@ var errorHandler = require('errorhandler')
 var morgan = require('morgan')
 var cons = require('consolidate')
 
-var app = module.exports = express()
+var app = express()
+var server = http.Server(app)
+var io = require('socket.io')(server, {
+  path: '/api/io'
+})
+module.exports = server
 
 app.set('port', process.env.PORT)
 app.set('views', path.join(__dirname, 'app', 'views'))
@@ -43,6 +49,7 @@ if (process.env.DEVELOPMENT) {
 }
 
 app.use('/', require('./app/controllers'))
+require('./app/controllers/io')(io)
 
 if (process.env.DEVELOPMENT) {
   app.use(errorHandler())

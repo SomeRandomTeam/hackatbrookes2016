@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 var intel = require('intel')
 intel.setLevel(intel[process.env.LOG_LEVEL] || intel.INFO)
-var app = require('../server.js')
+var server = require('../server.js')
+var port = process.env.PORT || 3000
 
-app.listen(app.get('port'), function () {
-  intel.info('Server listening on port %s', app.get('port'))
+server.listen(port, function () {
+  intel.info('Server listening on port %s', port)
 })
