@@ -22,7 +22,25 @@ app.use(bodyParser.json({limit: '50mb'}))
 app.use(cookieParser())
 app.use(methodOverride())
 
-app.use(express.static(path.join(__dirname, 'public')))
+if (process.env.DEVELOPMENT) {
+  var fs = require('fs')
+  var publicdir = path.join(__dirname, 'public')
+
+  app.use(function (req, res, next) {
+    if (req.path.indexOf('.') === -1) {
+      var file = publicdir + req.path + '.html'
+      fs.exists(file, function (exists) {
+        if (exists) {
+          req.url += '.html'
+        }
+        next()
+      })
+    } else {
+      next()
+    }
+  })
+  app.use(express.static(path.join(__dirname, 'public')))
+}
 
 app.use('/', require('./app/controllers'))
 
