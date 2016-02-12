@@ -4,7 +4,8 @@
   "description": "Hackathon project for Hack@Brookes 2016",
   "main": "server.js",
   "scripts": {
-    "start": "node_modules/.bin/nodemon -i app/assets -i public bin/web",
+    "start": "node_modules/.bin/forever bin/web",
+    "webdev": "node_modules/.bin/nodemon -i app/assets -i public bin/web",
     "build": "bin/build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,6 +30,7 @@
     "ejs": "2.4.1",
     "errorhandler": "1.4.3",
     "express": "4.13.4",
+    "forever": "0.15.1",
     "intel": "1.1.0",
     "method-override": "2.3.5",
     "morgan": "1.6.1",
