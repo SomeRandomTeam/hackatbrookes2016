@@ -24,7 +24,6 @@ module.exports = function (io) {
       game.update(delta)
       ltime = ctime
       var json = game.toJSON()
-      console.log(json.deaths)
       io.emit('update', json)
       game.clearDead()
     }

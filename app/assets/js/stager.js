@@ -27,8 +27,9 @@ var tower_FRAMES = [
 
 //Base Frames
 var base_FRAMES = [
-    "img/sprites/base/baseBlue.png",
-    "img/sprites/base/baseRed.png"
+    "img/sprites/base/Baseblue.png",
+    "img/sprites/base/BaseRed.png",
+    "img/sprites/base/Basegrey.png"
     ];
 
 //Bomb Frames
@@ -215,8 +216,8 @@ socket.on('update', function(data) {
     //sprites[elem.id].FRAMES = updateFrames(elem.type, elem.direction.x, elem.direction.y);
   });
   data.deaths.forEach(function(elem) {
-    sprites[elem.id].visible = false;
-    delete sprites[elem.id];
+    sprites[elem].visible = false;
+    delete sprites[elem];
   });
 })
 
@@ -259,7 +260,7 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
 }
 
 function createBuilding(type, team, c_x, c_y, dir_x, dir_y) {
-  var index = team == "yellow" ? 1 : 0;
+  var index = team == "yellow" ? 1 : (team == "neutral" ? 2 : 0);
   FRAMES = updateFrames(type, dir_x, dir_y);
   var newBuild = new PIXI.Sprite(PIXI.Texture.fromImage(FRAMES[index]));
   newBuild.anchor.x = 0.5;

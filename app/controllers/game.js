@@ -9,7 +9,7 @@ var Game = module.exports = function Game (graph) {
     node.coords = Vector.fromObj(node.coords)
   })
   this.units = []
-  this.deaths= []
+  this.deaths = []
 }
 
 Game.prototype.update = function (delta) {
@@ -31,7 +31,7 @@ Game.prototype.update = function (delta) {
 
   this.graph.nodes().forEach((nodeId) => {
     var node = this.graph.node(nodeId)
-    if (node.nType === 'tower' && node.team !== 'neutral') {
+    if (node.nType === 'base' && node.team !== 'neutral') {
       if (!node.buildTime || !node.unitType) {
         node.unitType = 'rocket'
         node.buildTime = require('./gamecomp/' + node.unitType).buildTime
