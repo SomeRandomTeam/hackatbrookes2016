@@ -215,7 +215,7 @@ socket.on('update', function(data) {
       stage.addChild(sprites[elem.id]);
     }
     sprites[elem.id] = updatePosition(sprites[elem.id], elem.position.x, elem.position.y);
-    //sprites[elem.id].FRAMES = updateFrames(elem.type, elem.direction.x, elem.direction.y);
+    sprites[elem.id].FRAMES = updateFrames(elem.type, elem.direction.x, elem.direction.y);
   });
   data.deaths.forEach(function(elem) {
     sprites[elem].visible = false;
