@@ -14,22 +14,22 @@ stage.addChild(backgroundSprite);
 //Sprite Frames
 
 //Wall Frames
-var wall_FRAMES = [
+var wall_return [
     "img/sprites/wall/wall.png"
     ];
 
 //Tower Frames
-var tower_FRAMES = [
+var tower_return [
     "img/sprites/tower/tower.png"
     ];
 
 //Base Frames
-var base_FRAMES = [
+var base_return [
     "img/sprites/base/base.png"
     ];
 
 //Bomb Frames
-var bomb_front_left_FRAMES = [
+var bomb_front_left_return [
     "img/sprites/bomb/bombFront/bombFront1.png",
     "img/sprites/bomb/bombFront/bombFront2.png"
     ];
@@ -37,7 +37,7 @@ var bomb_back_left_FRAMES= [
     "img/sprites/bomb/bombBack/bombBack1.png",
     "img/sprites/bomb/bombBack/bombBack2.png"
     ];
-var bomb_front_right_FRAMES = [
+var bomb_front_right_return [
     "img/sprites/bomb/bombFront/bombFront1.png",
     "img/sprites/bomb/bombFront/bombFront2.png"
     ];
@@ -45,7 +45,7 @@ var bomb_back_right_FRAMES= [
     "img/sprites/bomb/bombBack/bombBack1.png",
     "img/sprites/bomb/bombBack/bombBack2.png"
     ];
-var bomb_right_FRAMES = [
+var bomb_right_return [
     "img/sprites/bomb/bombFront/bombFront1.png",
     "img/sprites/bomb/bombFront/bombFront2.png"
     ];
@@ -55,130 +55,130 @@ var bomb_left_FRAMES= [
     ];
 
 //Healer Frames
-var healers_front_left_FRAMES = [
+var healers_front_left_return [
     "img/sprites/healer/healerFront/healerFront1.png",
     "img/sprites/healer/healerFront/healerFront2.png",
 ];
-var healers_back_left_FRAMES = [
+var healers_back_left_return [
     "img/sprites/healer/healerBack/healerBack1.png",
     "img/sprites/healer/healerBack/healerBack2.png",
 ];
-var healers_front_right_FRAMES = [
+var healers_front_right_return [
     "img/sprites/healer/healerFront/healerFront1.png",
     "img/sprites/healer/healerFront/healerFront2.png",
 ];
-var healers_back_right_FRAMES = [
+var healers_back_right_return [
     "img/sprites/healer/healerBack/healerBack1.png",
     "img/sprites/healer/healerBack/healerBack2.png",
 ];
-var healers_right_FRAMES = [
+var healers_right_return [
     "img/sprites/healer/healerFront/healerFront1.png",
     "img/sprites/healer/healerFront/healerFront2.png",
 ];
-var healers_left_FRAMES = [
+var healers_left_return [
     "img/sprites/healer/healerFront/healerFront1.png",
     "img/sprites/healer/healerFront/healerFront2.png",
 ];
 
-var tank_front_left_FRAMES = [
+var tank_front_left_return [
     "img/sprites/tank/DownLeft/Tank1.png",
     "img/sprites/tank/DownLeft/Tank2.png",
 ];
-var tank_back_left_FRAMES = [
+var tank_back_left_return [
     "img/sprites/tank/UpLeft/Tank5.png",
     "img/sprites/tank/UpLeft/Tank6.png",
 ];
-var tank_front_right_FRAMES = [
+var tank_front_right_return [
     "img/sprites/tank/DownRight/Tank1.png",
     "img/sprites/tank/DownRight/Tank2.png",
 ];
-var tank_back_right_FRAMES = [
+var tank_back_right_return [
     "img/sprites/tank/UpRight/Tank.png",
     "img/sprites/tank/UpRight/Tank2.png",
 ];
-var tank_left_FRAMES = [
+var tank_left_return [
     "img/sprites/tank/Left/Tank1.png",
     "img/sprites/tank/Left/Tank2.png",
 ];
-var tank_right_FRAMES = [
+var tank_right_return [
     "img/sprites/tank/Right/Tank3.png",
     "img/sprites/tank/Right/Tank4.png",
 ];
 
 //Builder Frames
-var builder_front_left_FRAMES = [
+var builder_front_left_return [
     "img/sprites/builder/builderFront/builderFront1.png",
     "img/sprites/builder/builderFront/builderFront2.png",
 ];
-var builder_back_left_FRAMES = [
+var builder_back_left_return [
     "img/sprites/builder/builderBack/builderBack1.png",
     "img/sprites/builder/builderBack/builderBack2.png",
 ];
-var builder_front_right_FRAMES = [
+var builder_front_right_return [
     "img/sprites/builder/builderFront/builderFront1.png",
     "img/sprites/builder/builderFront/builderFront2.png",
 ];
-var builder_back_right_FRAMES = [
+var builder_back_right_return [
     "img/sprites/builder/builderBack/builderBack1.png",
     "img/sprites/builder/builderBack/builderBack2.png",
 ];
-var builder_left_FRAMES = [
+var builder_left_return [
     "img/sprites/builder/builderFront/builderFront1.png",
     "img/sprites/builder/builderFront/builderFront2.png",
 ];
-var builder_right_FRAMES = [
+var builder_right_return [
     "img/sprites/builder/builderFront/builderFront1.png",
     "img/sprites/builder/builderFront/builderFront2.png",
 ];
 
 //Rocket Frames
-var rocket_front_left_FRAMES = [
+var rocket_front_left_return [
     "img/sprites/rocket/rocketFront/rocketFrontLeft.png",
     "img/sprites/rocket/rocketFront/rocketFrontLeft.png",
 ];
-var rocket_back_left_FRAMES = [
+var rocket_back_left_return [
     "img/sprites/rocket/rocketBack/rocketBackLeft.png",
     "img/sprites/rocket/rocketBack/rocketBackLeft.png",
 ];
-var rocket_front_right_FRAMES = [
+var rocket_front_right_return [
     "img/sprites/rocket/rocketFront/rocketFrontRight.png",
     "img/sprites/rocket/rocketFront/rocketFrontRight.png",
 ];
-var rocket_back_right_FRAMES = [
+var rocket_back_right_return [
     "img/sprites/rocket/rocketBack/rocketBackRight.png",
     "img/sprites/rocket/rocketBack/rocketBackRight.png",
 ];
-var rocket_right_FRAMES = [
+var rocket_right_return [
     "img/sprites/rocket/rocketSide/rocketRight.png",
     "img/sprites/rocket/rocketSide/rocketRight.png",
 ];
-var rocket_left_FRAMES = [
+var rocket_left_return [
     "img/sprites/rocket/rocketSide/rocketLeft.png",
     "img/sprites/rocket/rocketSide/rocketLeft.png",
 ];
 
 //Chopper Frames
-var chopper_front_left_FRAMES = [
+var chopper_front_left_return [
     "img/sprites/chopper/chopperFront/chopperFront1.png",
     "img/sprites/chopper/chopperFront/chopperFront2.png",
 ];
-var chopper_back_left_FRAMES = [
+var chopper_back_left_return [
     "img/sprites/chopper/chopperBack/chopperBack.png",
     "img/sprites/choppper/chopperBack/chopperBack.png",
 ];
-var chopper_front_right_FRAMES = [
+var chopper_front_right_return [
     "img/sprites/chopper/chopperFront/chopperFront1.png",
     "img/sprites/chopper/chopperFront/chopperFront2.png",
 ];
-var chopper_back_right_FRAMES = [
+var chopper_back_right_return [
     "img/sprites/chopper/chopperBack/chopperBack.png",
     "img/sprites/choppper/chopperBack/chopperBack.png",
 ];
-var chopper_left_FRAMES = [
+var chopper_left_return [
     "img/sprites/chopper/chopperFront/chopperFront1.png",
     "img/sprites/chopper/chopperFront/chopperFront2.png",
 ];
-var chopper_right_FRAMES = [
+var chopper_right_return [
     "img/sprites/chopper/chopperFront/chopperFront1.png",
     "img/sprites/chopper/chopperFront/chopperFront2.png",
 ];
@@ -198,6 +198,7 @@ socket.on('update', function(data) {
       stage.addChild(sprites[elem.id]);
     }
     sprites[elem.id] = updatePosition(sprites[elem.id], elem.position.x, elem.position.y);
+    sprites[elem.id].FRAMES = updateFrames(elem.type, elem.direction.x, elem.direction.y);
   });
 })
 
@@ -223,118 +224,8 @@ function animate() {
 }
 
 function createSprite(type, c_x, c_y, dir_x, dir_y) {
-  var NW = dir_x <= 0 && dir_y < 0;
-  var NE = dir_x > 0 && dir_y < 0;
-  var E  = dir_x > 0 && dir_y === 0;
-  var SE = dir_x >= 0 && dir_y > 0;
-  var SW = dir_x < 0 && dir_y > 0;
-  var W = dir_x <= 0 && dir_y === 0;
-  var FRAMES;
-  switch(type) {
-    case "wall":
-      FRAMES = wall_FRAMES;
-      break;
-    case "tower":
-      FRAMES = tower_FRAMES;
-      break;
-    case "base":
-      FRAMES = base_FRAMES;
-      break;
-    case "bomb":
-      if(NW) {
-        FRAMES = bomb_back_left_FRAMES;
-      } else if (NE){
-        FRAMES = bomb_back_right_FRAMES;
-      } else if (E){
-        FRAMES = bomb_right_FRAMES;
-      } else if (SE){
-        FRAMES = bomb_front_right_FRAMES;
-      } else if (SW){
-        FRAMES = bomb_front_left_FRAMES;
-      } else {
-        FRAMES = bomb_left_FRAMES;
-      }
-      break;
-    case "tank":
-      if(NW) {
-        FRAMES = tank_back_left_FRAMES;
-      } else if (NE){
-        FRAMES = tank_back_right_FRAMES;
-      } else if (E){
-        FRAMES = tank_right_FRAMES;
-      } else if (SE){
-        FRAMES = tank_front_right_FRAMES;
-      } else if (SW){
-        FRAMES = tank_front_left_FRAMES;
-      } else {
-        FRAMES = tank_left_FRAMES;
-      }
-      break;
-    case "healer":
-      if(NW) {
-        FRAMES = healer_back_left_FRAMES;
-      } else if (NE){
-        FRAMES = healer_back_right_FRAMES;
-      } else if (E){
-        FRAMES = healer_right_FRAMES;
-      } else if (SE){
-        FRAMES = healer_front_right_FRAMES;
-      } else if (SW){
-        FRAMES = healer_front_left_FRAMES;
-      } else{
-        FRAMES = healer_left_FRAMES;
-      }
-    break;
-    case "chopper":
-      if(NW) {
-        FRAMES = chopper_back_left_FRAMES;
-      } else if (NE){
-        FRAMES = chopper_back_right_FRAMES;
-      } else if (E){
-        FRAMES = chopper_right_FRAMES;
-      } else if (SE){
-        FRAMES = chopper_front_right_FRAMES;
-      } else if (SW){
-        FRAMES = chopper_front_left_FRAMES;
-      } else{
-        FRAMES = chopper_left_FRAMES;
-      }
-      break;
-    case "rocket":
-      if(NW) {
-        FRAMES = rocket_back_left_FRAMES;
-      } else if (NE){
-        FRAMES = rocket_back_right_FRAMES;
-      } else if (E){
-        FRAMES = rocket_right_FRAMES;
-      } else if (SE){
-        FRAMES = rocket_front_right_FRAMES;
-      } else if (SW){
-        FRAMES = rocket_front_left_FRAMES;
-      } else {
-        FRAMES = rocket_left_FRAMES;
-      }
-      break;
-    case "builder":
-      if(NW) {
-        FRAMES = builder_back_left_FRAMES;
-      } else if (NE){
-        FRAMES = builder_back_right_FRAMES;
-      } else if (E){
-        FRAMES = builder_right_FRAMES;
-      } else if (SE){
-        FRAMES = builder_front_right_FRAMES;
-      } else if (SW){
-        FRAMES = builder_front_left_FRAMES;
-      } else {
-        FRAMES = builder_left_FRAMES;
-      }
-      break;
-    default:
-      FRAMES = undefined;
-      throw "Sprite does not exist";
-  }
 
+  FRAMES = updateFrames(type, dir_x, dir_y);
   var newSprite = new PIXI.Sprite(PIXI.Texture.fromImage(FRAMES[0]));
   newSprite.anchor.x = 0.5;
   newSprite.anchor.y = 0.5;
@@ -346,11 +237,124 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
   newSprite.width = window.innerHeight / 15;
 
   newSprite.FRAMES = FRAMES;
-  return newSprite;
+  return  newSprite;
 }
 
 function updatePosition(sprite, x, y) {
   sprite.position.x = x;
   sprite.position.y = y;
-  return sprite;
+  return  sprite;
+}
+
+function updateFrames(type, dir_x, dir_y) {
+  var NW = dir_x <= 0 && dir_y < 0;
+  var NE = dir_x > 0 && dir_y < 0;
+  var E  = dir_x > 0 && dir_y === 0;
+  var SE = dir_x >= 0 && dir_y > 0;
+  var SW = dir_x < 0 && dir_y > 0;
+  var W = dir_x <= 0 && dir_y === 0;
+
+  switch(type) {
+    case "wall":
+      return  wall_FRAMES;
+
+    case "tower":
+      return  tower_FRAMES;
+
+    case "base":
+      return  base_FRAMES;
+
+    case "bomb":
+      if(NW) {
+        return  bomb_back_left_FRAMES;
+      } else if (NE){
+        return  bomb_back_right_FRAMES;
+      } else if (E){
+        return bomb_right_FRAMES;
+      } else if (SE){
+        return bomb_front_right_FRAMES;
+      } else if (SW){
+        return bomb_front_left_FRAMES;
+      } else {
+        return bomb_left_FRAMES;
+      }
+
+    case "tank":
+      if(NW) {
+        return tank_back_left_FRAMES;
+      } else if (NE){
+        return tank_back_right_FRAMES;
+      } else if (E){
+        return tank_right_FRAMES;
+      } else if (SE){
+        return tank_front_right_FRAMES;
+      } else if (SW){
+        return tank_front_left_FRAMES;
+      } else {
+        return tank_left_FRAMES;
+      }
+
+    case "healer":
+      if(NW) {
+        return healer_back_left_FRAMES;
+      } else if (NE){
+        return healer_back_right_FRAMES;
+      } else if (E){
+        return healer_right_FRAMES;
+      } else if (SE){
+        return healer_front_right_FRAMES;
+      } else if (SW){
+        return healer_front_left_FRAMES;
+      } else{
+        return healer_left_FRAMES;
+      }
+
+    case "chopper":
+      if(NW) {
+        return chopper_back_left_FRAMES;
+      } else if (NE){
+        return chopper_back_right_FRAMES;
+      } else if (E){
+        return chopper_right_FRAMES;
+      } else if (SE){
+        return chopper_front_right_FRAMES;
+      } else if (SW){
+        return chopper_front_left_FRAMES;
+      } else{
+        return chopper_left_FRAMES;
+      }
+
+    case "rocket":
+      if(NW) {
+        return rocket_back_left_FRAMES;
+      } else if (NE){
+        return rocket_back_right_FRAMES;
+      } else if (E){
+        return rocket_right_FRAMES;
+      } else if (SE){
+        return rocket_front_right_FRAMES;
+      } else if (SW){
+        return rocket_front_left_FRAMES;
+      } else {
+        return rocket_left_FRAMES;
+      }
+
+    case "builder":
+      if(NW) {
+        return builder_back_left_FRAMES;
+      } else if (NE){
+        return builder_back_right_FRAMES;
+      } else if (E){
+        return builder_right_FRAMES;
+      } else if (SE){
+        return builder_front_right_FRAMES;
+      } else if (SW){
+        return builder_front_left_FRAMES;
+      } else {
+        return builder_left_FRAMES;
+      }
+
+    default:
+      throw "Sprite does not exist";
+  }
 }
