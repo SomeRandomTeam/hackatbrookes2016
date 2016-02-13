@@ -13,6 +13,21 @@ stage.addChild(backgroundSprite);
 
 //Sprite Frames
 
+//Wall Frames
+var wall_FRAMES = [
+    "img/sprites/wall/wall.png"
+    ];
+
+//Tower Frames
+var tower_FRAMES = [
+    "img/sprites/tower/tower.png"
+    ];
+
+//Base Frames
+var base FRAMES = [
+    "img/sprites/base/base.png"
+    ];
+
 //Bomb Frames
 var bomb_front_left_FRAMES = [
     "img/sprites/bomb/bombFront/bombFront1.png",
@@ -216,6 +231,15 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
   var W = dir_x <= 0 && dir_y === 0;
   var FRAMES;
   switch(type) {
+    case "wall":
+      FRAMES = wall_FRAMES;
+      break;
+    case "tower":
+      FRAMES = tower_FRAMES;
+      break;
+    case "base":
+      FRAMES = base_FRAMES;
+      break;
     case "bomb":
       if(NW) {
         FRAMES = bomb_back_left_FRAMES;
