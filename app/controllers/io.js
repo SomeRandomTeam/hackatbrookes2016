@@ -1,37 +1,9 @@
 var graphparser = require('../utils/graphparser')
 var crypto = require('crypto')
+var Game = require('./game')
 
 var createId = function () {
   crypto.randomBytes(8).toString('hex')
-}
-
-function random (low, high) {
-  return Math.random() * (high - low) + low
-}
-
-function createUnit (graph, spawner) {
-  return {
-    type: 'unit',
-    position: {
-      x: 0,
-      y: 0
-    },
-    direction: {
-      x: 0,
-      y: 0
-    },
-    nodes: {
-      startid: spawner.nodeId,
-      destid: graph.outEdges(spawner.nodeId)[0].w,
-      progress: 0.0
-    }
-  }
-}
-
-function createGameState () {
-  return {
-    units: []
-  }
 }
 
 module.exports = function (io) {
@@ -41,38 +13,21 @@ module.exports = function (io) {
     }
 
     var sockets = []
-    var gameState = createGameState()
+    var game = new Game(graph)
 
     var gameloopIntVal = null
-    var counter = 0
+    var ltime = Date.now()
+    var ctime
     function gameloop () {
-      if (counter === 60) {
-        gameState.units.push(createUnit(graph, graph.node(graph.nodes()[0])))
-        counter = 0
-      }
-      ++counter
-
-      gameState.units.forEach(function (unit) {
-        if (unit.nodes.progress < 1.0) {
-          unit.nodes.progress += 0.01
-        }
-        var startNode = graph.node(unit.nodes.startid)
-        var endNode = graph.node(unit.nodes.destid)
-        unit.direction.x =
-          (endNode.coords.x - startNode.coords.x)
-        unit.direction.y =
-          (endNode.coords.y - startNode.coords.y)
-
-        unit.position.x =
-          startNode.coords.x + unit.direction.x * unit.nodes.progress
-        unit.position.y =
-          startNode.coords.y + unit.direction.y * unit.nodes.progress
-      })
-
-      io.emit('update', gameState)
+      ctime = Date.now()
+      var delta = (ctime - ltime) / 1000
+      game.update(delta)
+      ltime = ctime
+      console.log(game.toJSON())
+      io.emit('update', game.toJSON())
     }
 
-    setInterval(gameloop, 1000 / 30)
+    gameloopIntVal = setInterval(gameloop, 1000 / 30)
 
     io.on('connection', function (socket) {
       sockets.push(socket)
