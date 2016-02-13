@@ -17,63 +17,159 @@ stage.addChild(backgroundSprite);
 //Sprite Frames
 
 //Bomb Frames
-var bomb_front_FRAMES = [
+var bomb_front_left_FRAMES = [
     "img/sprites/bomb/bombFront/bombFront1.png",
     "img/sprites/bomb/bombFront/bombFront2.png"
     ];
-var bomb_back_FRAMES= [
+var bomb_back_left_FRAMES= [
     "img/sprites/bomb/bombBack/bombBack1.png",
     "img/sprites/bomb/bombBack/bombBack2.png"
     ];
+var bomb_front_right_FRAMES = [
+    "img/sprites/bomb/bombFront/bombFront1.png",
+    "img/sprites/bomb/bombFront/bombFront2.png"
+    ];
+var bomb_back_right_FRAMES= [
+    "img/sprites/bomb/bombBack/bombBack1.png",
+    "img/sprites/bomb/bombBack/bombBack2.png"
+    ];
+var bomb_right_FRAMES = [
+    "img/sprites/bomb/bombFront/bombFront1.png",
+    "img/sprites/bomb/bombFront/bombFront2.png"
+    ];
+var bomb_left_FRAMES= [
+    "img/sprites/bomb/bombFront/bombFront1.png",
+    "img/sprites/bomb/bombFront/bombFront2.png"
+    ];
 
 //Healer Frames
-var healers_front_FRAMES = [
+var healers_front_left_FRAMES = [
     "img/sprites/healer/healerFront/healerFront1.png",
     "img/sprites/healer/healerFront/healerFront2.png",
 ];
-var healers_back_FRAMES = [
+var healers_back_left_FRAMES = [
     "img/sprites/healer/healerBack/healerBack1.png",
     "img/sprites/healer/healerBack/healerBack2.png",
 ];
+var healers_front_right_FRAMES = [
+    "img/sprites/healer/healerFront/healerFront1.png",
+    "img/sprites/healer/healerFront/healerFront2.png",
+];
+var healers_back_right_FRAMES = [
+    "img/sprites/healer/healerBack/healerBack1.png",
+    "img/sprites/healer/healerBack/healerBack2.png",
+];
+var healers_right_FRAMES = [
+    "img/sprites/healer/healerFront/healerFront1.png",
+    "img/sprites/healer/healerFront/healerFront2.png",
+];
+var healers_left_FRAMES = [
+    "img/sprites/healer/healerFront/healerFront1.png",
+    "img/sprites/healer/healerFront/healerFront2.png",
+];
 
 //Tank Frames should contain more images
-var tank_front_FRAMES = [
+var tank_front_left_FRAMES = [
     "img/sprites/tank/tankFront/tankFront1.png",
     "img/sprites/tank/tankFront/tankFront2.png",
 ];
-var tank_back_FRAMES = [
+var tank_back_left_FRAMES = [
     "img/sprites/tank/tankBack/tankBack1.png",
     "img/sprites/tank/tankBack/tankBack2.png",
 ];
+var tank_front_right_FRAMES = [
+    "img/sprites/tank/tankFront/tankFront1.png",
+    "img/sprites/tank/tankFront/tankFront2.png",
+];
+var tank_back_right_FRAMES = [
+    "img/sprites/tank/tankBack/tankBack1.png",
+    "img/sprites/tank/tankBack/tankBack2.png",
+];
+var tank_left_FRAMES = [
+    "img/sprites/tank/tankFront/tankFront1.png",
+    "img/sprites/tank/tankFront/tankFront2.png",
+];
+var tank_right_FRAMES = [
+    "img/sprites/tank/tankFront/tankFront1.png",
+    "img/sprites/tank/tankFront/tankFront2.png",
+];
 
 //Builder Frames
-var builder_front_FRAMES = [
+var builder_front_left_FRAMES = [
     "img/sprites/builder/tankFront/builderFront1.png",
     "img/sprites/builder/tankFront/builderFront2.png",
 ];
-var builder_back_FRAMES = [
+var builder_back_left_FRAMES = [
     "img/sprites/builder/builderBack/builderBack1.png",
     "img/sprites/builder/builderBack/builderBack2.png",
 ];
+var builder_front_right_FRAMES = [
+    "img/sprites/builder/tankFront/builderFront1.png",
+    "img/sprites/builder/tankFront/builderFront2.png",
+];
+var builder_back_right_FRAMES = [
+    "img/sprites/builder/builderBack/builderBack1.png",
+    "img/sprites/builder/builderBack/builderBack2.png",
+];
+var builder_left_FRAMES = [
+    "img/sprites/builder/tankFront/builderFront1.png",
+    "img/sprites/builder/tankFront/builderFront2.png",
+];
+var builder_right_FRAMES = [
+    "img/sprites/builder/tankFront/builderFront1.png",
+    "img/sprites/builder/tankFront/builderFront2.png",
+];
 
 //Rocket Frames
-var rocket_front_FRAMES = [
+var rocket_front_left_FRAMES = [
     "img/sprites/rocket/rocketFront/rocketFront1.png",
     "img/sprites/rocket/rocketFront/rocketFront2.png",
 ];
-var rocket_back_FRAMES = [
+var rocket_back_left_FRAMES = [
     "img/sprites/rocket/rocketBack/rocketBack1.png",
     "img/sprites/rocket/rocketBack/rocketBack2.png",
 ];
+var rocket_front_right_FRAMES = [
+    "img/sprites/rocket/rocketFront/rocketFront1.png",
+    "img/sprites/rocket/rocketFront/rocketFront2.png",
+];
+var rocket_back_right_FRAMES = [
+    "img/sprites/rocket/rocketBack/rocketBack1.png",
+    "img/sprites/rocket/rocketBack/rocketBack2.png",
+];
+var rocket_right_FRAMES = [
+    "img/sprites/rocket/rocketFront/rocketFront1.png",
+    "img/sprites/rocket/rocketFront/rocketFront2.png",
+];
+var rocket_left_FRAMES = [
+    "img/sprites/rocket/rocketFront/rocketFront1.png",
+    "img/sprites/rocket/rocketFront/rocketFront2.png",
+];
 
 //Chopper Frames
-var chopper_front_FRAMES = [
+var chopper_front_left_FRAMES = [
     "img/sprites/chopper/chopperFront/chopperFront1.png",
     "img/sprites/chopper/chopperFront/chopperFront2.png",
 ];
-var chopper_back_FRAMES = [
+var chopper_front_back_FRAMES = [
     "img/sprites/chopper/chopperBack/chopperBack1.png",
     "img/sprites/choppper/chopperBack/chopperBack2.png",
+];
+var chopper_front_right_FRAMES = [
+    "img/sprites/chopper/chopperFront/chopperFront1.png",
+    "img/sprites/chopper/chopperFront/chopperFront2.png",
+];
+var chopper_back_right_FRAMES = [
+    "img/sprites/chopper/chopperBack/chopperBack1.png",
+    "img/sprites/choppper/chopperBack/chopperBack2.png",
+];
+var chopper_left_FRAMES = [
+    "img/sprites/chopper/chopperFront/chopperFront1.png",
+    "img/sprites/chopper/chopperFront/chopperFront2.png",
+];
+var chopper_right_FRAMES = [
+    "img/sprites/chopper/chopperFront/chopperFront1.png",
+    "img/sprites/chopper/chopperFront/chopperFront2.png",
 ];
 //End
 
