@@ -244,8 +244,8 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
   newSprite.position.x = c_x;
   newSprite.position.y = c_y;
 
-  newSprite.height = window.innerHeight / 5;
-  newSprite.width = window.innerHeight / 5;
+  newSprite.height = window.innerHeight / 40;
+  newSprite.width = window.innerHeight / 40;
 
   newSprite.FRAMES = FRAMES;
   return  newSprite;
@@ -262,8 +262,8 @@ function createBuilding(type, team, c_x, c_y, dir_x, dir_y) {
   newBuild.position.x = c_x;
   newBuild.position.y = c_y;
 
-  newBuild.height = window.innerHeight / 40;
-  newBuild.width = window.innerHeight / 40;
+  newBuild.height = window.innerHeight / 10;
+  newBuild.width = window.innerHeight / 10;
 
   newBuild.FRAMES = [FRAMES[index]];
   return  newBuild;
@@ -384,6 +384,6 @@ function updateFrames(type, dir_x, dir_y) {
       }
 
     default:
-      
+
   }
 }
