@@ -14,7 +14,9 @@ var Game = module.exports = function Game (graph) {
 
 Game.prototype.update = function (delta) {
   this.units.forEach((unit) => {
-    if (!this.attack(delta, unit)) {
+    var shouldMove = true
+    shouldMove = shouldMove && !this.attack(delta, unit)
+    if (shouldMove) {
       unit.update(delta)
     }
     var startCoord = unit.sourceNode.coords
