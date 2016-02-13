@@ -1,3 +1,5 @@
+"use strict"
+require('use-strict')
 require('dotenv').load()
 
 var http = require('http')
@@ -14,7 +16,6 @@ var cons = require('consolidate')
 var app = express()
 var server = http.Server(app)
 var io = require('socket.io')(server, {
-  path: '/api/io'
 })
 module.exports = server
 
