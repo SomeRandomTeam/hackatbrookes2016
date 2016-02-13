@@ -45,7 +45,7 @@ if (process.env.DEVELOPMENT) {
       next()
     }
   })
-  app.use(express.static(path.join(__dirname, 'public')))
+  app.use(express.static(path.join(__dirname, 'app', 'assets')))
 }
 
 app.use('/', require('./app/controllers'))
