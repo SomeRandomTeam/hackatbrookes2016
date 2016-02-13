@@ -216,8 +216,8 @@ socket.on('update', function(data) {
     //sprites[elem.id].FRAMES = updateFrames(elem.type, elem.direction.x, elem.direction.y);
   });
   data.deaths.forEach(function(elem) {
-    sprites[elem.id].visible = false;
-    delete sprites[elem.id];
+    sprites[elem].visible = false;
+    delete sprites[elem];
   });
 })
 
