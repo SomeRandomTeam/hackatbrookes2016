@@ -143,7 +143,7 @@ module.exports = function (pngPath, cb) {
 
     var width = data.width
     var height = data.height
-    var graph = new Graph({directed: false})
+    var graph = new Graph({directed: true})
     var pdata = parseImage(data)
 
     for (let x = 0; x < width; x++) {
