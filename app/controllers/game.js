@@ -7,6 +7,15 @@ var Game = module.exports = function Game (graph) {
   this.graph.nodes().forEach(function (nodeId) {
     var node = graph.node(nodeId)
     node.coords = Vector.fromObj(node.coords)
+    if (node.nType === 'base') {
+      if (node.team === 'blue') {
+        node.loyalty = -100
+      } else if (node.team === 'neutral') {
+        node.loyalty = 0
+      } else if (node.team === 'yellow') {
+        node.loyalty = 100
+      }
+    }
   })
   this.units = []
   this.deaths = []
@@ -16,6 +25,7 @@ Game.prototype.update = function (delta) {
   this.units.forEach((unit) => {
     var shouldMove = true
     shouldMove = shouldMove && !this.attack(delta, unit)
+    shouldMove = shouldMove && !this.conquer(delta, unit)
     if (shouldMove) {
       unit.update(delta)
     }
@@ -81,6 +91,7 @@ Game.prototype.toJSON = function () {
       return {
         id: node.nodeId,
         team: node.team,
+        loyalty: node.loyalty,
         type: node.nType,
         unitType: node.unitType,
         position: {
@@ -102,4 +113,35 @@ Game.prototype.toJSON = function () {
 
 Game.prototype.clearDead = function () {
   this.deaths = []
+}
+
+Game.prototype.conquer = function (delta, unit) {
+  var conquest = false
+  this.graph.nodes().forEach((nodeId) => {
+    var node = this.graph.node(nodeId)
+    if (node.nType !== 'base') {
+      return
+    }
+    if (unit.team === node.team) {
+      return
+    }
+    if (unit.position.subtract(node.coords).length() <= 30) {
+      conquest = true
+      if (unit.team === 'blue') {
+        node.loyalty -= 2 * delta
+      }
+      if (unit.team === 'yellow') {
+        node.loyalty += 2 * delta
+      }
+      if (node.loyalty <= -100) {
+        node.team = 'blue'
+        node.loyalty = -100
+      }
+      if (node.loyalty >= 100) {
+        node.team = 'yellow'
+        node.loyalty = 100
+      }
+    }
+  })
+  return conquest
 }
