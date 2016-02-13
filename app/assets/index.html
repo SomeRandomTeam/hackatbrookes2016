@@ -62,7 +62,7 @@
         <div class="row" ng-repeat="r in panel">
           <div class="{{r.blocked}}">
           <center>
-            <div class="col-md-4"><img ng-src="{{r.src}}" width="40%" click="sendSocketData(panel)"></div>
+            <div class="col-md-4"><img ng-src="{{r.src}}" width="40%" ng-click="sendSocketData(panel)"></div>
           <div class="col-md-2" ng-repeat="g in r.glyphicons">
             <button id="{{g.id}}" type="button" class="btn btn-secondary {{g.state}}" ng-click="plusCounter(r.id, g.id)">
               <span class="glyphicon glyphicon-{{g.glyph}}"></span>

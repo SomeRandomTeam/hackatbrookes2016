@@ -32,6 +32,10 @@ module.exports = function (io) {
     io.on('connection', function (socket) {
       sockets.push(socket)
 
+      socket.on('upgrades', function (data) {
+        console.log(data)
+      })
+
       socket.on('disconnect', function () {
       })
     })

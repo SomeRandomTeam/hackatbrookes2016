@@ -41,11 +41,12 @@ Game.prototype.update = function (delta) {
     }
   })
 
+  var untTypes = ['tank', 'rocket', 'chopper', 'bomb']
   this.graph.nodes().forEach((nodeId) => {
     var node = this.graph.node(nodeId)
     if (node.nType === 'base' && node.team !== 'neutral') {
       if (!node.buildTime || !node.unitType) {
-        node.unitType = 'rocket'
+        node.unitType = untTypes[_.random(untTypes.length - 1)]
         node.buildTime = require('./gamecomp/' + node.unitType).buildTime
       }
       node.buildTime -= delta

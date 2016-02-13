@@ -9,7 +9,7 @@ Chopper.create = function (team, v) {
 }
 
 Chopper.init = function (team, v) {
-  Unit.init.call(this, v)
+  Unit.init.call(this, team, v)
   return this
 }
 
