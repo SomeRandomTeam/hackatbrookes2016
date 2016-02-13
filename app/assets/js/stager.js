@@ -97,30 +97,106 @@ function animate() {
 }
 
 function createSprite(type, c_x, c_y, dir_x, dir_y) {
-  var right = dir_x > 0 ? true : false;
-  var front = dir_y < 0 ? true : false;
+  var NW = dir_x <= 0 && dir_y < 0;
+  var NE = dir_x > 0 && dir_y < 0;
+  var E  = dir_x > 0 && dir_y === 0;
+  var SE = dir_x >= 0 && dir_y > 0;
+  var SW = dir_x < 0 && dir_y > 0;
+  var W = dir_x <= 0 && dir_y === 0;
   switch(type) {
-    case "bomb":
-      var FRAMES = front ? bomb_front_FRAMES : bomb_back_FRAMES;
+    var FRAMES;
+    case "bomb": 
+      if(NW) {
+        FRAMES = bomb_back_left_FRAMES;
+      } else if (NE){             
+        FRAMES = bomb_back_right_FRAMES;
+      } else if (E){             
+        FRAMES = bomb_right_FRAMES;
+      } else if (SE){             
+        FRAMES = bomb_front_right_FRAMES;
+      } else if (SW){             
+        FRAMES = bomb_front_left_FRAMES;
+      } else (W){             
+        FRAMES = bomb_left_FRAMES;
+      }
       break;
     case "tank":
-      var FRAMES = front ? tank_front_FRAMES : tank_back_FRAMES;
-      //add a var for left or right
+      if(NW) {
+        FRAMES = tank_back_left_FRAMES;
+      } else if (NE){             
+        FRAMES = tank_back_right_FRAMES;
+      } else if (E){             
+        FRAMES = tank_right_FRAMES;
+      } else if (SE){             
+        FRAMES = tank_front_right_FRAMES;
+      } else if (SW){             
+        FRAMES = tank_front_left_FRAMES;
+      } else (W){             
+        FRAMES = tank_left_FRAMES;
+      }
       break;
-    case "healer":
-      var FRAMES = front ? healer_front_FRAMES : healer_back_FRAMES;
+    case "healer": 
+      if(NW) {
+        FRAMES = healer_back_left_FRAMES;
+      } else if (NE){             
+        FRAMES = healer_back_right_FRAMES;
+      } else if (E){             
+        FRAMES = healer_right_FRAMES;
+      } else if (SE){             
+        FRAMES = healer_front_right_FRAMES;
+      } else if (SW){             
+        FRAMES = healer_front_left_FRAMES;
+      } else (W){             
+        FRAMES = healer_left_FRAMES;
+      }
+    break;
+    case "chopper": 
+      if(NW) {
+        FRAMES = chopper_back_left_FRAMES;
+      } else if (NE){             
+        FRAMES = chopper_back_right_FRAMES;
+      } else if (E){             
+        FRAMES = chopper_right_FRAMES;
+      } else if (SE){             
+        FRAMES = chopper_front_right_FRAMES;
+      } else if (SW){             
+        FRAMES = chopper_front_left_FRAMES;
+      } else (W){             
+        FRAMES = chopper_left_FRAMES;
+      }
       break;
-    case "chopper":
-      var FRAMES = front ? chopper_front_FRAMES : chopper_back_FRAMES;
+    case "rocket":  
+      if(NW) {
+        FRAMES = rocket_back_left_FRAMES;
+      } else if (NE){             
+        FRAMES = rocket_back_right_FRAMES;
+      } else if (E){             
+        FRAMES = rocket_right_FRAMES;
+      } else if (SE){             
+        FRAMES = rocket_front_right_FRAMES;
+      } else if (SW){             
+        FRAMES = rocket_front_left_FRAMES;
+      } else (W){             
+        FRAMES = rocket_left_FRAMES;
+      }
       break;
-    case "rocket":
-      var FRAMES = front ? rocket_front_FRAMES : rocket_back_FRAMES;
-      break;
-    case "builder":
-      var FRAMES = front ? builder_front_FRAMES : builder_back_FRAMES;
+    case "builder": 
+      if(NW) {
+        FRAMES = builder_back_left_FRAMES;
+      } else if (NE){             
+        FRAMES = builder_back_right_FRAMES;
+      } else if (E){             
+        FRAMES = builder_right_FRAMES;
+      } else if (SE){             
+        FRAMES = builder_front_right_FRAMES;
+      } else if (SW){             
+        FRAMES = builder_front_left_FRAMES;
+      } else (W){             
+        FRAMES = builder_left_FRAMES;
+      }
       break;
     default:
-      var FRAMES = undefined;
+      FRAMES = undefined;
       throw "Sprite does not exist";
   }
 
