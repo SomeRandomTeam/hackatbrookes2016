@@ -72,8 +72,8 @@ var chopper_back_FRAMES = [
 document.body.appendChild(display.view);
 
 requestAnimationFrame( animate );
-bomb = createBomb(100, 100, true);
-stage.addChild(bomb);
+sprite = createSprite("bomb", 100, 100, false);
+stage.addChild(sprite);
 
 frameindex = 0;
 frametime = FRAMERATE;
@@ -85,10 +85,10 @@ function animate() {
   frametime -= delta;
   if (frametime <= 0) {
      frameindex++;
-     if (frameindex >= bomb.FRAMES.length) {
+     if (frameindex >= sprite.FRAMES.length) {
         frameindex = 0;
        }
-    bomb.texture = PIXI.Texture.fromImage(bomb.FRAMES[frameindex]);
+    sprite.texture = PIXI.Texture.fromImage(sprite.FRAMES[frameindex]);
     frametime = FRAMERATE;
    }
   requestAnimationFrame( animate );
@@ -96,17 +96,42 @@ function animate() {
   lasttime = currtime;
 }
 
-function createBomb(c_x, c_y, front) {
-  var FRAMES = front ? bomb_front_FRAMES : bomb_back_FRAMES;
-  var newBomb = new PIXI.Sprite(PIXI.Texture.fromImage(FRAMES[0]));
-  newBomb.anchor.x = 0.5;
-  newBomb.anchor.y = 0.5;
+function createSprite(type, c_x, c_y, front) {
 
-  newBomb.position.x = c_x;
-  newBomb.position.y = c_y;
+  switch(type) {
+    case "bomb":
+      var FRAMES = front ? bomb_front_FRAMES : bomb_back_FRAMES;
+      break;
+    case "tank":
+      var FRAMES = front ? tank_front_FRAMES : tank_back_FRAMES;
+      break;
+    case "healer":
+      var FRAMES = front ? healer_front_FRAMES : healer_back_FRAMES;
+      break;
+    case "chopper":
+      var FRAMES = front ? chopper_front_FRAMES : chopper_back_FRAMES;
+      break;
+    case "rocket":
+      var FRAMES = front ? rocket_front_FRAMES : rocket_back_FRAMES;
+      break;
+    case "builder":
+      var FRAMES = front ? builder_front_FRAMES : builder_back_FRAMES;
+      break;
+    default:
+      var FRAMES = undefined;
+      throw "Sprite does not exist";
+  }
 
-  newBomb.height = window.innerHeight / 10;
-  newBomb.width = window.innerHeight / 10;
-  newBomb.FRAMES = FRAMES;
-  return newBomb;
+  var newSprite = new PIXI.Sprite(PIXI.Texture.fromImage(FRAMES[0]));
+  newSprite.anchor.x = 0.5;
+  newSprite.anchor.y = 0.5;
+
+  newSprite.position.x = c_x;
+  newSprite.position.y = c_y;
+
+  newSprite.height = window.innerHeight / 10;
+  newSprite.width = window.innerHeight / 10;
+
+  newSprite.FRAMES = FRAMES;
+  return newSprite;
 }
