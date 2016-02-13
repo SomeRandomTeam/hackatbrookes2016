@@ -96,28 +96,28 @@ var tank_right_FRAMES = [
 
 //Builder Frames
 var builder_front_left_FRAMES = [
-    "img/sprites/builder/tankFront/builderFront1.png",
-    "img/sprites/builder/tankFront/builderFront2.png",
+    "img/sprites/builder/builderFront/builderFront1.png",
+    "img/sprites/builder/builderFront/builderFront2.png",
 ];
 var builder_back_left_FRAMES = [
     "img/sprites/builder/builderBack/builderBack1.png",
     "img/sprites/builder/builderBack/builderBack2.png",
 ];
 var builder_front_right_FRAMES = [
-    "img/sprites/builder/tankFront/builderFront1.png",
-    "img/sprites/builder/tankFront/builderFront2.png",
+    "img/sprites/builder/builderFront/builderFront1.png",
+    "img/sprites/builder/builderFront/builderFront2.png",
 ];
 var builder_back_right_FRAMES = [
     "img/sprites/builder/builderBack/builderBack1.png",
     "img/sprites/builder/builderBack/builderBack2.png",
 ];
 var builder_left_FRAMES = [
-    "img/sprites/builder/tankFront/builderFront1.png",
-    "img/sprites/builder/tankFront/builderFront2.png",
+    "img/sprites/builder/builderFront/builderFront1.png",
+    "img/sprites/builder/builderFront/builderFront2.png",
 ];
 var builder_right_FRAMES = [
-    "img/sprites/builder/tankFront/builderFront1.png",
-    "img/sprites/builder/tankFront/builderFront2.png",
+    "img/sprites/builder/builderFront/builderFront1.png",
+    "img/sprites/builder/builderFront/builderFront2.png",
 ];
 
 //Rocket Frames
@@ -151,7 +151,7 @@ var chopper_front_left_FRAMES = [
     "img/sprites/chopper/chopperFront/chopperFront1.png",
     "img/sprites/chopper/chopperFront/chopperFront2.png",
 ];
-var chopper_front_back_FRAMES = [
+var chopper_back_left_FRAMES = [
     "img/sprites/chopper/chopperBack/chopperBack1.png",
     "img/sprites/choppper/chopperBack/chopperBack2.png",
 ];
