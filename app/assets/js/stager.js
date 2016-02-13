@@ -96,9 +96,7 @@ function animate() {
   lasttime = currtime;
 }
 
-function createSprite(type, c_x, c_y, dir_x, dir_y) {
-  var right = dir_x > 0 ? true : false;
-  var front = dir_y < 0 ? true : false;
+function createSprite(type, c_x, c_y, front) {
   switch(type) {
     case "bomb":
       var FRAMES = front ? bomb_front_FRAMES : bomb_back_FRAMES;
