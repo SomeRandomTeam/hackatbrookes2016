@@ -28,7 +28,7 @@ var healers_back_FRAMES = [
     "img/sprites/healer/healerBack/healerBack2.png",
 ];
 
-//Tank Frames
+//Tank Frames should contain more images
 var tank_front_FRAMES = [
     "img/sprites/tank/tankFront/tankFront1.png",
     "img/sprites/tank/tankFront/tankFront2.png",
@@ -96,14 +96,16 @@ function animate() {
   lasttime = currtime;
 }
 
-function createSprite(type, c_x, c_y, front) {
-
+function createSprite(type, c_x, c_y, dir_x, dir_y) {
+  var right = dir_x > 0 ? true : false;
+  var front = dir_y < 0 ? true : false;
   switch(type) {
     case "bomb":
       var FRAMES = front ? bomb_front_FRAMES : bomb_back_FRAMES;
       break;
     case "tank":
       var FRAMES = front ? tank_front_FRAMES : tank_back_FRAMES;
+      //add a var for left or right
       break;
     case "healer":
       var FRAMES = front ? healer_front_FRAMES : healer_back_FRAMES;
