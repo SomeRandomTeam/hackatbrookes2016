@@ -200,6 +200,14 @@ socket.on('update', function(data) {
     sprites[elem.id] = updatePosition(sprites[elem.id], elem.position.x, elem.position.y);
     sprites[elem.id].FRAMES = updateFrames(elem.type, elem.direction.x, elem.direction.y);
   });
+  data.nodes.forEach(function(elem) {
+    if(!sprites[elem.id]) {
+      sprites[elem.id] = createSprite(elem.type, elem.position.x, elem.position.y, elem.direction.x, elem.direction.y);
+      stage.addChild(sprites[elem.id]);
+    }
+    sprites[elem.id] = updatePosition(sprites[elem.id], elem.position.x, elem.position.y);
+    sprites[elem.id].FRAMES = updateFrames(elem.type, elem.direction.x, elem.direction.y);
+  });
 })
 
 frameindex = 0;
