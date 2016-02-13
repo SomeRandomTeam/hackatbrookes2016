@@ -208,7 +208,7 @@ socket.on('update', function(data) {
       sprites[elem.id] = createBuilding(elem.type, elem.team, elem.position.x, elem.position.y, elem.direction.x, elem.direction.y);
       stage.addChild(sprites[elem.id]);
     }
-    //sprites[elem.id] = updatePosition(sprites[elem.id], elem.position.x, elem.position.y);
+    sprites[elem.id] = updatePosition(sprites[elem.id], elem.position.x, elem.position.y);
     //sprites[elem.id].FRAMES = updateFrames(elem.type, elem.direction.x, elem.direction.y);
   });
 })
@@ -244,8 +244,8 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
   newSprite.position.x = c_x;
   newSprite.position.y = c_y;
 
-  newSprite.height = window.innerHeight / 40;
-  newSprite.width = window.innerHeight / 40;
+  newSprite.height = window.innerHeight / 20;
+  newSprite.width = window.innerHeight / 20;
 
   newSprite.FRAMES = FRAMES;
   return  newSprite;
