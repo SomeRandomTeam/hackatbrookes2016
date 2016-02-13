@@ -205,7 +205,7 @@ socket.on('update', function(data) {
   });
   data.nodes.forEach(function(elem) {
     if(!sprites[elem.id]) {
-      sprites[elem.id] = createSprite(elem.type, elem.position.x, elem.position.y, elem.direction.x, elem.direction.y);
+      sprites[elem.id] = createBuilding(elem.type, elem.team, elem.position.x, elem.position.y, elem.direction.x, elem.direction.y);
       stage.addChild(sprites[elem.id]);
     }
     //sprites[elem.id] = updatePosition(sprites[elem.id], elem.position.x, elem.position.y);
@@ -249,6 +249,24 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
 
   newSprite.FRAMES = FRAMES;
   return  newSprite;
+}
+
+function createBuilding(type, team, c_x, c_y, dir_x, dir_y) {
+
+  var index = team == "yellow" ? 1 : 0;
+  FRAMES = updateFrames(type, dir_x, dir_y);
+  var newBuild = new PIXI.Sprite(PIXI.Texture.fromImage(FRAMES[index]));
+  newBuild.anchor.x = 0.5;
+  newBuild.anchor.y = 0.5;
+
+  newBuild.position.x = c_x;
+  newBuild.position.y = c_y;
+
+  newBuild.height = window.innerHeight / 40;
+  newBuild.width = window.innerHeight / 40;
+
+  newBuild.FRAMES = [FRAMES[index]];
+  return  newBuild;
 }
 
 function updatePosition(sprite, x, y) {
