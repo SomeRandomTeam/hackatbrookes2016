@@ -384,6 +384,6 @@ function updateFrames(type, dir_x, dir_y) {
       }
 
     default:
-      throw "Sprite does not exist";
+      
   }
 }
