@@ -64,7 +64,7 @@
           <center>
             <div class="col-md-4"><img ng-src="{{r.src}}" width="40%"></div>
           <div class="col-md-2" ng-repeat="g in r.glyphicons">
-            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-{{g.glyph}}"></span></button>
+            <button id="{{g.id}}" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-{{g.glyph}}"></span></button>
             <span class="badge badge-notify">{{g.labelCount}}</span>
           </div>
         </center>
