@@ -1,7 +1,6 @@
 var _ = require('lodash')
 
 var Vector = require('./gamecomp/vector')
-var Tank = require('./gamecomp/tank')
 
 var Game = module.exports = function Game (graph) {
   this.graph = graph
@@ -14,8 +13,9 @@ var Game = module.exports = function Game (graph) {
 
 Game.prototype.update = function (delta) {
   this.units.forEach((unit) => {
-    unit.update(delta)
-    console.log(unit.direction)
+    if (!this.attack(delta, unit)) {
+      unit.update(delta)
+    }
     var startCoord = unit.sourceNode.coords
     var endCoord = unit.targetNode.coords
     var unitCoord = unit.position
@@ -30,14 +30,16 @@ Game.prototype.update = function (delta) {
 
   this.graph.nodes().forEach((nodeId) => {
     var node = this.graph.node(nodeId)
+    console.log('updating nogres')
     if (node.nType === 'tower' && node.team !== 'neutral') {
-      if (!node.buildTime) {
-        node.buildTime = 10
+      if (!node.buildTime || !node.unitType) {
+        node.unitType = 'tank'
+        node.buildTime = require('./gamecomp/' + node.unitType).buildTime
       }
       node.buildTime -= delta
     }
     if (node.buildTime <= 0) {
-      var unit = Tank.create(node.team, node.coords)
+      var unit = require('./gamecomp/' + node.unitType).create(node.team, node.coords)
       this.units.push(unit)
       var edges = this.graph.outEdges(node.nodeId)
       var targetnodeId = edges[_.random(edges.length - 1)].w
@@ -47,6 +49,25 @@ Game.prototype.update = function (delta) {
       node.buildTime = unit.buildTime
     }
   })
+}
+
+Game.prototype.attack = function (delta, unit) {
+  var attacked = false
+  this.units.forEach(function (ptarg) {
+    if (unit.position.subtract(ptarg.position) <= unit.range &&
+        unit.team !== ptarg.team) {
+      ptarg.health -= unit.damage * delta
+      attacked = true
+    }
+  })
+
+  for (let i = this.units.length - 1; i >= 0; i--) {
+    if (this.units[i].health <= 0) {
+      this.units.splice(i, 1)
+    }
+  }
+
+  return attacked
 }
 
 Game.prototype.toJSON = function () {
