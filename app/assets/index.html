@@ -19,7 +19,7 @@
     <link href="css/full.css" rel="stylesheet">
 
     <script type="text/javascript" src="/api/io/socket.io.js"></script>
-    <script type="text/javascript" src="js/pixi.min.js"></script>
+    <script type="text/javascript" src="js/pixi.js"></script>
 </head>
 
 <body>
@@ -50,29 +50,10 @@
         <!-- /.container -->
     </nav>
 
-    <script>
-
-      var stage = new PIXI.Stage(0x66FF99);
-      var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight - 55);
-
-      document.body.appendChild(renderer.view);
-      requestAnimationFrame( animate );
-      var texture = new PIXI.Texture.fromImage("img/sprites/bomb/bombFront.png");
-      var bomb = new PIXI.Sprite(texture);
-      bomb.anchor.x = 0.5;
-      bomb.anchor.y = 0.5;
-      bomb.position.x = 100;
-      bomb.position.y = 100;
-      stage.addChild(bomb);
-
-      function animate() {
-        requestAnimationFrame( animate );
-        renderer.render(stage);
-      }
-    </script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
+    <script type="text/javascript" src="js/stager.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
