@@ -12,6 +12,7 @@ game.controller('gameController', function($scope) {
         });
       }
     });
+    $scope.activateFeature();
   };
 
   $scope.activateFeature = function() {
