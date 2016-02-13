@@ -1,3 +1,7 @@
+var socket = io();
+socket.on('update', function(data) {
+  
+})
 var lasttime = new Date().getTime();
 var stage = new PIXI.Stage(0x66FF99);
 var display = PIXI.autoDetectRenderer(776, 776);
@@ -109,93 +113,93 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
   var W = dir_x <= 0 && dir_y === 0;
   switch(type) {
     var FRAMES;
-    case "bomb": 
+    case "bomb":
       if(NW) {
         FRAMES = bomb_back_left_FRAMES;
-      } else if (NE){             
+      } else if (NE){
         FRAMES = bomb_back_right_FRAMES;
-      } else if (E){             
+      } else if (E){
         FRAMES = bomb_right_FRAMES;
-      } else if (SE){             
+      } else if (SE){
         FRAMES = bomb_front_right_FRAMES;
-      } else if (SW){             
+      } else if (SW){
         FRAMES = bomb_front_left_FRAMES;
-      } else (W){             
+      } else (W){
         FRAMES = bomb_left_FRAMES;
       }
       break;
     case "tank":
       if(NW) {
         FRAMES = tank_back_left_FRAMES;
-      } else if (NE){             
+      } else if (NE){
         FRAMES = tank_back_right_FRAMES;
-      } else if (E){             
+      } else if (E){
         FRAMES = tank_right_FRAMES;
-      } else if (SE){             
+      } else if (SE){
         FRAMES = tank_front_right_FRAMES;
-      } else if (SW){             
+      } else if (SW){
         FRAMES = tank_front_left_FRAMES;
-      } else (W){             
+      } else (W){
         FRAMES = tank_left_FRAMES;
       }
       break;
-    case "healer": 
+    case "healer":
       if(NW) {
         FRAMES = healer_back_left_FRAMES;
-      } else if (NE){             
+      } else if (NE){
         FRAMES = healer_back_right_FRAMES;
-      } else if (E){             
+      } else if (E){
         FRAMES = healer_right_FRAMES;
-      } else if (SE){             
+      } else if (SE){
         FRAMES = healer_front_right_FRAMES;
-      } else if (SW){             
+      } else if (SW){
         FRAMES = healer_front_left_FRAMES;
-      } else (W){             
+      } else (W){
         FRAMES = healer_left_FRAMES;
       }
     break;
-    case "chopper": 
+    case "chopper":
       if(NW) {
         FRAMES = chopper_back_left_FRAMES;
-      } else if (NE){             
+      } else if (NE){
         FRAMES = chopper_back_right_FRAMES;
-      } else if (E){             
+      } else if (E){
         FRAMES = chopper_right_FRAMES;
-      } else if (SE){             
+      } else if (SE){
         FRAMES = chopper_front_right_FRAMES;
-      } else if (SW){             
+      } else if (SW){
         FRAMES = chopper_front_left_FRAMES;
-      } else (W){             
+      } else (W){
         FRAMES = chopper_left_FRAMES;
       }
       break;
-    case "rocket":  
+    case "rocket":
       if(NW) {
         FRAMES = rocket_back_left_FRAMES;
-      } else if (NE){             
+      } else if (NE){
         FRAMES = rocket_back_right_FRAMES;
-      } else if (E){             
+      } else if (E){
         FRAMES = rocket_right_FRAMES;
-      } else if (SE){             
+      } else if (SE){
         FRAMES = rocket_front_right_FRAMES;
-      } else if (SW){             
+      } else if (SW){
         FRAMES = rocket_front_left_FRAMES;
-      } else (W){             
+      } else (W){
         FRAMES = rocket_left_FRAMES;
       }
       break;
-    case "builder": 
+    case "builder":
       if(NW) {
         FRAMES = builder_back_left_FRAMES;
-      } else if (NE){             
+      } else if (NE){
         FRAMES = builder_back_right_FRAMES;
-      } else if (E){             
+      } else if (E){
         FRAMES = builder_right_FRAMES;
-      } else if (SE){             
+      } else if (SE){
         FRAMES = builder_front_right_FRAMES;
-      } else if (SW){             
+      } else if (SW){
         FRAMES = builder_front_left_FRAMES;
-      } else (W){             
+      } else (W){
         FRAMES = builder_left_FRAMES;
       }
       break;
