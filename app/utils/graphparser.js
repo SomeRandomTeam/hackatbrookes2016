@@ -103,6 +103,7 @@ function parseImage (imageData) {
         mdata.type = 'node'
         if (wall) {
           mdata.nType = 'wall'
+          mdata.team = 'neutral'
         } else if (bldg) {
           mdata.nType = 'base'
           mdata.team = 'neutral'
