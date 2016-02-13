@@ -247,8 +247,8 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
   newSprite.position.x = c_x;
   newSprite.position.y = c_y;
 
-  newSprite.height = window.innerHeight / 40;
-  newSprite.width = window.innerHeight / 40;
+  newSprite.height = window.innerHeight / 30;
+  newSprite.width = window.innerHeight / 30;
 
   newSprite.FRAMES = FRAMES;
   return  newSprite;
