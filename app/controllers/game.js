@@ -9,7 +9,7 @@ var Game = module.exports = function Game (graph) {
     node.coords = Vector.fromObj(node.coords)
   })
   this.units = []
-  this.deaths= []
+  this.deaths = []
 }
 
 Game.prototype.update = function (delta) {
