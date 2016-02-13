@@ -6758,3 +6758,9 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.badge-notify{
+   background:red;
+   position:relative;
+   top: -20px;
+   left: -20px;
+}

@@ -1,14 +1,14 @@
 
 var lasttime = new Date().getTime();
 var stage = new PIXI.Stage(0x66FF99);
-var display = PIXI.autoDetectRenderer(776, 776);
+var display = PIXI.autoDetectRenderer(625, 625);
 var frameindex;
 var frametime;
 var FRAMERATE = 0.4;
 var VELOCITY = 100;
 
 //Loading the background map.
-var backgroundSprite = new PIXI.Sprite(PIXI.Texture.fromImage("img/maps/map1/map1.png"));
+var backgroundSprite = new PIXI.Sprite(PIXI.Texture.fromImage("img/maps/map4/map4.png"));
 stage.addChild(backgroundSprite);
 
 //Sprite Frames
@@ -24,7 +24,7 @@ var tower_FRAMES = [
     ];
 
 //Base Frames
-var base FRAMES = [
+var base_FRAMES = [
     "img/sprites/base/base.png"
     ];
 

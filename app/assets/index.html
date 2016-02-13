@@ -13,13 +13,14 @@
     <title>SomeRandomGame</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/full.css" rel="stylesheet">
 
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="js/pixi.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
 </head>
 
 <body>
@@ -58,31 +59,164 @@
 
         <div class="row">
           <center>
-          <div class="col-md-4">
-            <span class="glyphicon glyphicon-plus"></span>
+            <div class="col-md-4"><img src="img/buttons/tankIcon.png" width="40%"></div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-plus"></span></button>
+            <span class="badge badge-notify">0</span>
           </div>
-          <div class="col-md-4">
-            <span class="glyphicon glyphicon-forward"></span>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-forward"></span></button>
+            <span class="badge badge-notify">0</span>
           </div>
-          <div class="col-md-4">
-            <span class="glyphicon glyphicon-dashboard"></span>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-dashboard"></span></button>
+            <span class="badge badge-notify">0</span>
           </div>
         </center>
         </div>
 
-        <div class="row"><div class="well">Chopper</div></div>
+        <div class="row">
+          <center>
+            <div class="col-md-4"><img src="img/buttons/chopperIcon.png" width="40%"></div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-plus"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-forward"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-dashboard"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-flash"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+        </center>
+        </div>
 
-        <div class="row"><div class="well">Rocket</div></div>
+        <div class="row">
+          <center>
+            <div class="col-md-4"><img src="img/buttons/rocketIcon.png" width="40%"></div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-plus"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-forward"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-dashboard"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-flash"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+        </center>
+        </div>
 
-        <div class="row"><div class="well">Bomb</div></div>
+        <div class="row">
+          <center>
+            <div class="col-md-4"><img src="img/buttons/bombIcon.png" width="40%"></div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-plus"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-forward"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-dashboard"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-flash"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+        </center>
+        </div>
 
-        <div class="row"><div class="well">Builder</div></div>
+        <div class="row">
+          <center>
+            <div class="col-md-4"><img src="img/buttons/builderIcon.png" width="40%"></div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-plus"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-forward"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-dashboard"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+        </center>
+        </div>
 
-        <div class="row"><div class="well">Healer</div></div>
+        <div class="row">
+          <center>
+            <div class="col-md-4"><img src="img/buttons/healerIcon.png" width="40%"></div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-plus"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-forward"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-dashboard"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+        </center>
+        </div>
 
-        <div class="row"><div class="well">Wall</div></div>
+        <div class="row">
+          <center>
+            <div class="col-md-4"><img src="img/buttons/wallIcon.png" width="40%"></div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-plus"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-forward"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-dashboard"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+        </center>
+        </div>
 
-        <div class="row"><div class="well">Tower</div></div>
+        <div class="row">
+          <center>
+            <div class="col-md-4"><img src="img/buttons/towerIcon.png" width="40%"></div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-plus"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-forward"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-dashboard"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-flash"></span></button>
+            <span class="badge badge-notify">0</span>
+          </div>
+        </center>
+        </div>
+
       </div>
     </div>
     <!-- jQuery -->
