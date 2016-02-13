@@ -14,22 +14,22 @@ stage.addChild(backgroundSprite);
 //Sprite Frames
 
 //Wall Frames
-var wall_return [
+var wall_FRAMES [
     "img/sprites/wall/wall.png"
     ];
 
 //Tower Frames
-var tower_return [
+var tower_FRAMES [
     "img/sprites/tower/tower.png"
     ];
 
 //Base Frames
-var base_return [
+var base_FRAMES [
     "img/sprites/base/base.png"
     ];
 
 //Bomb Frames
-var bomb_front_left_return [
+var bomb_front_left_FRAMES [
     "img/sprites/bomb/bombFront/bombFront1.png",
     "img/sprites/bomb/bombFront/bombFront2.png"
     ];
@@ -37,7 +37,7 @@ var bomb_back_left_FRAMES= [
     "img/sprites/bomb/bombBack/bombBack1.png",
     "img/sprites/bomb/bombBack/bombBack2.png"
     ];
-var bomb_front_right_return [
+var bomb_front_right_FRAMES [
     "img/sprites/bomb/bombFront/bombFront1.png",
     "img/sprites/bomb/bombFront/bombFront2.png"
     ];
@@ -45,7 +45,7 @@ var bomb_back_right_FRAMES= [
     "img/sprites/bomb/bombBack/bombBack1.png",
     "img/sprites/bomb/bombBack/bombBack2.png"
     ];
-var bomb_right_return [
+var bomb_right_FRAMES [
     "img/sprites/bomb/bombFront/bombFront1.png",
     "img/sprites/bomb/bombFront/bombFront2.png"
     ];
@@ -55,130 +55,130 @@ var bomb_left_FRAMES= [
     ];
 
 //Healer Frames
-var healers_front_left_return [
+var healers_front_left_FRAMES [
     "img/sprites/healer/healerFront/healerFront1.png",
     "img/sprites/healer/healerFront/healerFront2.png",
 ];
-var healers_back_left_return [
+var healers_back_left_FRAMES [
     "img/sprites/healer/healerBack/healerBack1.png",
     "img/sprites/healer/healerBack/healerBack2.png",
 ];
-var healers_front_right_return [
+var healers_front_right_FRAMES [
     "img/sprites/healer/healerFront/healerFront1.png",
     "img/sprites/healer/healerFront/healerFront2.png",
 ];
-var healers_back_right_return [
+var healers_back_right_FRAMES [
     "img/sprites/healer/healerBack/healerBack1.png",
     "img/sprites/healer/healerBack/healerBack2.png",
 ];
-var healers_right_return [
+var healers_right_FRAMES [
     "img/sprites/healer/healerFront/healerFront1.png",
     "img/sprites/healer/healerFront/healerFront2.png",
 ];
-var healers_left_return [
+var healers_left_FRAMES [
     "img/sprites/healer/healerFront/healerFront1.png",
     "img/sprites/healer/healerFront/healerFront2.png",
 ];
 
-var tank_front_left_return [
+var tank_front_left_FRAMES [
     "img/sprites/tank/DownLeft/Tank1.png",
     "img/sprites/tank/DownLeft/Tank2.png",
 ];
-var tank_back_left_return [
+var tank_back_left_FRAMES [
     "img/sprites/tank/UpLeft/Tank5.png",
     "img/sprites/tank/UpLeft/Tank6.png",
 ];
-var tank_front_right_return [
+var tank_front_right_FRAMES [
     "img/sprites/tank/DownRight/Tank1.png",
     "img/sprites/tank/DownRight/Tank2.png",
 ];
-var tank_back_right_return [
+var tank_back_right_FRAMES [
     "img/sprites/tank/UpRight/Tank.png",
     "img/sprites/tank/UpRight/Tank2.png",
 ];
-var tank_left_return [
+var tank_left_FRAMES [
     "img/sprites/tank/Left/Tank1.png",
     "img/sprites/tank/Left/Tank2.png",
 ];
-var tank_right_return [
+var tank_right_FRAMES [
     "img/sprites/tank/Right/Tank3.png",
     "img/sprites/tank/Right/Tank4.png",
 ];
 
 //Builder Frames
-var builder_front_left_return [
+var builder_front_left_FRAMES [
     "img/sprites/builder/builderFront/builderFront1.png",
     "img/sprites/builder/builderFront/builderFront2.png",
 ];
-var builder_back_left_return [
+var builder_back_left_FRAMES [
     "img/sprites/builder/builderBack/builderBack1.png",
     "img/sprites/builder/builderBack/builderBack2.png",
 ];
-var builder_front_right_return [
+var builder_front_right_FRAMES [
     "img/sprites/builder/builderFront/builderFront1.png",
     "img/sprites/builder/builderFront/builderFront2.png",
 ];
-var builder_back_right_return [
+var builder_back_right_FRAMES [
     "img/sprites/builder/builderBack/builderBack1.png",
     "img/sprites/builder/builderBack/builderBack2.png",
 ];
-var builder_left_return [
+var builder_left_FRAMES [
     "img/sprites/builder/builderFront/builderFront1.png",
     "img/sprites/builder/builderFront/builderFront2.png",
 ];
-var builder_right_return [
+var builder_right_FRAMES [
     "img/sprites/builder/builderFront/builderFront1.png",
     "img/sprites/builder/builderFront/builderFront2.png",
 ];
 
 //Rocket Frames
-var rocket_front_left_return [
+var rocket_front_left_FRAMES [
     "img/sprites/rocket/rocketFront/rocketFrontLeft.png",
     "img/sprites/rocket/rocketFront/rocketFrontLeft.png",
 ];
-var rocket_back_left_return [
+var rocket_back_left_FRAMES [
     "img/sprites/rocket/rocketBack/rocketBackLeft.png",
     "img/sprites/rocket/rocketBack/rocketBackLeft.png",
 ];
-var rocket_front_right_return [
+var rocket_front_right_FRAMES [
     "img/sprites/rocket/rocketFront/rocketFrontRight.png",
     "img/sprites/rocket/rocketFront/rocketFrontRight.png",
 ];
-var rocket_back_right_return [
+var rocket_back_right_FRAMES [
     "img/sprites/rocket/rocketBack/rocketBackRight.png",
     "img/sprites/rocket/rocketBack/rocketBackRight.png",
 ];
-var rocket_right_return [
+var rocket_right_FRAMES [
     "img/sprites/rocket/rocketSide/rocketRight.png",
     "img/sprites/rocket/rocketSide/rocketRight.png",
 ];
-var rocket_left_return [
+var rocket_left_FRAMES [
     "img/sprites/rocket/rocketSide/rocketLeft.png",
     "img/sprites/rocket/rocketSide/rocketLeft.png",
 ];
 
 //Chopper Frames
-var chopper_front_left_return [
+var chopper_front_left_FRAMES [
     "img/sprites/chopper/chopperFront/chopperFront1.png",
     "img/sprites/chopper/chopperFront/chopperFront2.png",
 ];
-var chopper_back_left_return [
+var chopper_back_left_FRAMES [
     "img/sprites/chopper/chopperBack/chopperBack.png",
     "img/sprites/choppper/chopperBack/chopperBack.png",
 ];
-var chopper_front_right_return [
+var chopper_front_right_FRAMES [
     "img/sprites/chopper/chopperFront/chopperFront1.png",
     "img/sprites/chopper/chopperFront/chopperFront2.png",
 ];
-var chopper_back_right_return [
+var chopper_back_right_FRAMES [
     "img/sprites/chopper/chopperBack/chopperBack.png",
     "img/sprites/choppper/chopperBack/chopperBack.png",
 ];
-var chopper_left_return [
+var chopper_left_FRAMES [
     "img/sprites/chopper/chopperFront/chopperFront1.png",
     "img/sprites/chopper/chopperFront/chopperFront2.png",
 ];
-var chopper_right_return [
+var chopper_right_FRAMES [
     "img/sprites/chopper/chopperFront/chopperFront1.png",
     "img/sprites/chopper/chopperFront/chopperFront2.png",
 ];
