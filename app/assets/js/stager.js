@@ -223,6 +223,10 @@ socket.on('update', function(data) {
   });
 })
 
+function sendSocketData(data) {
+  socket.emit('upgrades', data);
+};
+
 frameindex = 0;
 frametime = FRAMERATE;
 
