@@ -10,7 +10,6 @@ Tank.create = function (team, v) {
 
 Tank.init = function (team, v) {
   Unit.init.call(this, team, v)
-  this.position = Vector.fromObj(v)
   return this
 }
 

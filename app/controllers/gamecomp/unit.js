@@ -8,10 +8,10 @@ var createId = function () {
 
 var Unit = module.exports = Object.create({})
 
-Unit.init = function (team) {
+Unit.init = function (team, pos) {
   this.id = createId()
   this.team = team
-  this.position = Vector.create(0, 0)
+  this.position = pos
   this.direction = Vector.create(0, 0)
   return this
 }
@@ -24,7 +24,6 @@ Unit.update = function (delta) {
 
 Unit.setTarget = function (target) {
   this.targetNode = target
-  console.log(target)
   this.direction = Vector.fromObj(target.coords).subtract(this.position).normal()
 }
 
