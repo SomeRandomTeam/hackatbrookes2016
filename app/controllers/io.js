@@ -23,7 +23,10 @@ module.exports = function (io) {
       var delta = (ctime - ltime) / 1000
       game.update(delta)
       ltime = ctime
-      io.emit('update', game.toJSON())
+      var json = game.toJSON()
+      console.log(json.deaths)
+      io.emit('update', json)
+      game.clearDead()
     }
     gameloopIntVal = setInterval(gameloop, 1000 / 30)
 

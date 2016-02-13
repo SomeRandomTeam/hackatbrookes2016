@@ -9,6 +9,7 @@ var Game = module.exports = function Game (graph) {
     node.coords = Vector.fromObj(node.coords)
   })
   this.units = []
+  this.deaths= []
 }
 
 Game.prototype.update = function (delta) {
@@ -32,7 +33,7 @@ Game.prototype.update = function (delta) {
     var node = this.graph.node(nodeId)
     if (node.nType === 'tower' && node.team !== 'neutral') {
       if (!node.buildTime || !node.unitType) {
-        node.unitType = 'tank'
+        node.unitType = 'rocket'
         node.buildTime = require('./gamecomp/' + node.unitType).buildTime
       }
       node.buildTime -= delta
@@ -53,16 +54,17 @@ Game.prototype.update = function (delta) {
 Game.prototype.attack = function (delta, unit) {
   var attacked = false
   this.units.forEach(function (ptarg) {
-    if (unit.position.subtract(ptarg.position) <= unit.range &&
-        unit.team !== ptarg.team) {
-      ptarg.health -= unit.damage * delta
-      console.log('unit damaged')
-      attacked = true
+    if (unit.team !== ptarg.team) {
+      if (unit.position.subtract(ptarg.position).length() <= unit.range) {
+        ptarg.hp -= unit.damage * delta
+        attacked = true
+      }
     }
   })
 
   for (let i = this.units.length - 1; i >= 0; i--) {
-    if (this.units[i].health <= 0) {
+    if (this.units[i].hp <= 0) {
+      this.deaths.push(this.units[i].id)
       this.units.splice(i, 1)
     }
   }
@@ -91,6 +93,11 @@ Game.prototype.toJSON = function () {
     }),
     units: this.units.map((unit) => {
       return unit.toJSON()
-    })
+    }),
+    deaths: this.deaths
   }
+}
+
+Game.prototype.clearDead = function () {
+  this.deaths = []
 }
