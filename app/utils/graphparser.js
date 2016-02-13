@@ -19,10 +19,7 @@ function decodePixel (p) {
 
 function isBlank (p) {
   var px = decodePixel(p)
-  return px.r === 0 &&
-         px.g === 0 &&
-         px.b === 0 &&
-         px.a === 0
+  return px.a < 255
 }
 
 function isPath (p) {
@@ -98,25 +95,22 @@ function parseImage (imageData) {
       pixels[x][y] = mdata
       if (blnk) {
         mdata.type = 'blank'
-      }
-      if (path) {
+      } else if (path) {
         mdata.type = 'path'
-      }
-      if (trrt) {
+      } else if (trrt) {
         mdata.type = 'turret'
-      }
-      if (node) {
+      } else if (node) {
         mdata.type = 'node'
         if (wall) {
           mdata.nType = 'wall'
         } else if (bldg) {
-          mdata.nType = 'building'
+          mdata.nType = 'tower'
           mdata.team = 'neutral'
         } else if (tmbl) {
-          mdata.nType = 'building'
+          mdata.nType = 'tower'
           mdata.team = 'blue'
         } else if (tmyl) {
-          mdata.nType = 'building'
+          mdata.nType = 'tower'
           mdata.team = 'yellow'
         } else {
           mdata.nType = 'junction'

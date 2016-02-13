@@ -23,6 +23,8 @@ Unit.update = function (delta) {
 }
 
 Unit.setTarget = function (target) {
-  this.direction = Vector.create(target.x, target.y).subtract(this.position).normal()
+  this.targetNode = target
+  console.log(target)
+  this.direction = Vector.fromObj(target.coords).subtract(this.position).normal()
 }
 

@@ -5,11 +5,11 @@ var Unit = require('./unit')
 var Tank = module.exports = Object.create(Unit)
 
 Tank.create = function (team, v) {
-  return Object.create(Tank).init(team)
+  return Object.create(Tank).init(team, v)
 }
 
-Tank.init = function (v) {
-  Unit.init.call(this, v)
+Tank.init = function (team, v) {
+  Unit.init.call(this, team, v)
   this.position = Vector.fromObj(v)
   return this
 }
@@ -33,7 +33,9 @@ Tank.toJSON = function () {
 }
 
 Tank.type = 'tank'
-Tank.buildTime = 10
-Tank.speed = 10
-Tank.maxHP = 10
 Tank.hp = 10
+Tank.maxHP = 10
+Tank.damage = 0
+Tank.speed = 10
+Tank.range = 0
+Tank.buildTime = 10

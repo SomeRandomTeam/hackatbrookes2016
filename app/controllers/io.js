@@ -7,7 +7,7 @@ var createId = function () {
 }
 
 module.exports = function (io) {
-  graphparser('HexMap2.png', function (err, graph) {
+  graphparser('app/assets/img/maps/map4/HexMap4GRAPH.png', function (err, graph) {
     if (err) {
       throw err
     }
@@ -23,7 +23,7 @@ module.exports = function (io) {
       var delta = (ctime - ltime) / 1000
       game.update(delta)
       ltime = ctime
-      console.log(game.toJSON())
+      // console.log(JSON.stringify(game, null, 2))
       io.emit('update', game.toJSON())
     }
 
