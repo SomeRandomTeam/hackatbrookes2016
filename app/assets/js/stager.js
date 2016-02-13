@@ -264,8 +264,8 @@ function createBuilding(type, team, c_x, c_y, dir_x, dir_y) {
   newBuild.position.x = c_x;
   newBuild.position.y = c_y;
 
-  newBuild.height = window.innerHeight / 10;
-  newBuild.width = window.innerHeight / 10;
+  newBuild.height = window.innerHeight / 15;
+  newBuild.width = window.innerHeight / 15;
 
   newBuild.FRAMES = [FRAMES[index]];
   return  newBuild;
