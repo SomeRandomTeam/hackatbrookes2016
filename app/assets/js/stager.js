@@ -1,10 +1,14 @@
 var lasttime = new Date().getTime();
 var stage = new PIXI.Stage(0x66FF99);
-var display = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight - 55);
+var display = PIXI.autoDetectRenderer(776, 776);
 var frameindex;
 var frametime;
 var FRAMERATE = 0.4;
 var VELOCITY = 100;
+
+//Loading the background map.
+var backgroundSprite = new PIXI.Sprite(PIXI.Texture.fromImage("img/maps/map1/map1.png"));
+stage.addChild(backgroundSprite);
 
 //Sprite Frames
 
@@ -69,10 +73,10 @@ var chopper_back_FRAMES = [
 ];
 //End
 
-document.body.appendChild(display.view);
+document.getElementById('frame').appendChild(display.view);
 
 requestAnimationFrame( animate );
-sprite = createSprite("chopper", 100, 100, true);
+sprite = createSprite("chopper", 200, 200, true);
 stage.addChild(sprite);
 
 frameindex = 0;
