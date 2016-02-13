@@ -214,6 +214,10 @@ socket.on('update', function(data) {
     sprites[elem.id] = updatePosition(sprites[elem.id], elem.position.x, elem.position.y);
     //sprites[elem.id].FRAMES = updateFrames(elem.type, elem.direction.x, elem.direction.y);
   });
+  data.deaths.forEach(function(elem) {
+    sprites[elem.id].visible = false;
+    delete sprites[elem.id];
+  });
 })
 
 frameindex = 0;

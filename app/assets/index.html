@@ -56,10 +56,11 @@
       <div class="col-md-7" id="frame" >
       </div>
       <div class="col-md-4" ng-controller="gameController">
-        <div class="row"><div class="well"><center><h4>Upgrades</h4></center></div></div>
+        <div class="row"><div class="alert alert-warning"><center><h5>Upgrades</h5></center></div></div>
 
 
         <div class="row" ng-repeat="r in panel">
+          <div class="{{r.blocked}}">
           <center>
             <div class="col-md-4"><img ng-src="{{r.src}}" width="40%"></div>
           <div class="col-md-2" ng-repeat="g in r.glyphicons">
@@ -68,13 +69,14 @@
           </div>
         </center>
         </div>
+      </div>
 
 
       </div>
     </div>
 
     <script>
-      
+
     </script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
