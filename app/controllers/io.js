@@ -23,11 +23,9 @@ module.exports = function (io) {
       var delta = (ctime - ltime) / 1000
       game.update(delta)
       ltime = ctime
-      console.log(JSON.stringify(game, null, 2))
       io.emit('update', game.toJSON())
     }
     gameloopIntVal = setInterval(gameloop, 1000 / 30)
-
 
     io.on('connection', function (socket) {
       sockets.push(socket)

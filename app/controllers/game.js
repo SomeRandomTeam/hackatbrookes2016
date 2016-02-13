@@ -30,7 +30,6 @@ Game.prototype.update = function (delta) {
 
   this.graph.nodes().forEach((nodeId) => {
     var node = this.graph.node(nodeId)
-    console.log('updating nogres')
     if (node.nType === 'tower' && node.team !== 'neutral') {
       if (!node.buildTime || !node.unitType) {
         node.unitType = 'tank'
@@ -57,6 +56,7 @@ Game.prototype.attack = function (delta, unit) {
     if (unit.position.subtract(ptarg.position) <= unit.range &&
         unit.team !== ptarg.team) {
       ptarg.health -= unit.damage * delta
+      console.log('unit damaged')
       attacked = true
     }
   })

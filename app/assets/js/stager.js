@@ -204,6 +204,9 @@ socket.on('update', function(data) {
     sprites[elem.id].FRAMES = updateFrames(elem.type, elem.direction.x, elem.direction.y);
   });
   data.nodes.forEach(function(elem) {
+    if (elem.type === 'junction') {
+      return
+    }
     if(!sprites[elem.id]) {
       sprites[elem.id] = createBuilding(elem.type, elem.team, elem.position.x, elem.position.y, elem.direction.x, elem.direction.y);
       stage.addChild(sprites[elem.id]);
@@ -252,7 +255,6 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
 }
 
 function createBuilding(type, team, c_x, c_y, dir_x, dir_y) {
-
   var index = team == "yellow" ? 1 : 0;
   FRAMES = updateFrames(type, dir_x, dir_y);
   var newBuild = new PIXI.Sprite(PIXI.Texture.fromImage(FRAMES[index]));
