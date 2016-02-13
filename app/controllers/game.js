@@ -61,6 +61,10 @@ Game.prototype.toJSON = function () {
         position: {
           x: node.coords.x,
           y: node.coords.y
+        },
+        direction: {
+          x: 0,
+          y: 0
         }
       }
     }),
