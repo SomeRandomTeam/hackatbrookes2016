@@ -15,17 +15,20 @@ stage.addChild(backgroundSprite);
 
 //Wall Frames
 var wall_FRAMES = [
-    "img/sprites/wall/wall.png"
+    "img/sprites/wall/wallBlue.png",
+    "img/sprites/wall/wallRed.png"
     ];
 
 //Tower Frames
 var tower_FRAMES = [
-    "img/sprites/tower/tower.png"
+    "img/sprites/tower/towerBlue.png",
+    "img/sprites/tower/towerRed.png"
     ];
 
 //Base Frames
 var base_FRAMES = [
-    "img/sprites/base/base.png"
+    "img/sprites/base/baseBlue.png",
+    "img/sprites/base/baseRed.png"
     ];
 
 //Bomb Frames
