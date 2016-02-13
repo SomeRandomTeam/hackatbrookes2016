@@ -57,6 +57,14 @@
 
       document.body.appendChild(renderer.view);
       requestAnimationFrame( animate );
+      var texture = new PIXI.Texture.fromImage("img/sprites/bomb/bombFront.png");
+      var bomb = new PIXI.Sprite(texture);
+      bomb.anchor.x = 0.5;
+      bomb.anchor.y = 0.5;
+      bomb.position.x = 100;
+      bomb.position.y = 100;
+      stage.addChild(bomb);
+
       function animate() {
         requestAnimationFrame( animate );
         renderer.render(stage);
