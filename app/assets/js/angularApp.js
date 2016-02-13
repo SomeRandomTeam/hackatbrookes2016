@@ -6,7 +6,7 @@ game.controller('gameController', function($scope) {
     $scope.panel.forEach(function(elem) {
       if (elem.id === parent) {
         elem.glyphicons.forEach(function(glyphs){
-          if(glyphs.id === id) {
+          if(glyphs.id === id && glyphs.state != "disabled") {
             glyphs.labelCount += 1;
           }
         });
@@ -25,47 +25,62 @@ game.controller('gameController', function($scope) {
           });
           if (sum > 5) {
             $scope.panel.forEach(function(nextElem){
-              if(nextElem.id == "chopper")
+              if(nextElem.id === "chopper") {
                 nextElem.blocked = "alert alert-success";
+                $scope.activateButtons(nextElem.id);
+              }
             });
           }
           break;
         case "rocket":
-          sum = 0;
           elem.glyphicons.forEach(function(glyphs) {
             sum += glyphs.labelCount;
           });
           if (sum > 5) {
             $scope.panel.forEach(function(nextElem){
-              if(nextElem.id == "bomb")
+              if(nextElem.id === "bomb") {
                 nextElem.blocked = "alert alert-success";
+                $scope.activateButtons(nextElem.id);
+              }
             });
           }
           break;
         case "builder":
-          sum = 0;
           elem.glyphicons.forEach(function(glyphs) {
             sum += glyphs.labelCount;
           });
           if (sum > 5) {
             $scope.panel.forEach(function(nextElem){
-              if(nextElem.id == "healer")
+              if(nextElem.id === "healer") {
                 nextElem.blocked = "alert alert-success";
+                $scope.activateButtons(nextElem.id);
+              }
             });
           }
           break;
         case "wall":
-          sum = 0;
           elem.glyphicons.forEach(function(glyphs) {
             sum += glyphs.labelCount;
           });
           if (sum > 5) {
             $scope.panel.forEach(function(nextElem){
-              if(nextElem.id == "tower")
+              if(nextElem.id === "tower") {
                 nextElem.blocked = "alert alert-success";
+                $scope.activateButtons(nextElem.id);
+              }
             });
           }
           break;
+      }
+    });
+  };
+
+  $scope.activateButtons = function(parentId) {
+    $scope.panel.forEach(function(elem){
+      if(elem.id === parentId){
+        elem.glyphicons.forEach(function(glyphs){
+          glyphs.state = "active";
+        });
       }
     });
   };
@@ -78,16 +93,19 @@ game.controller('gameController', function($scope) {
       glyphicons: [
         {
           id: "tank_plus",
+          state: "active",
           labelCount: 0,
           glyph: "plus"
         },
         {
           id: "tank_forward",
+          state: "active",
           labelCount: 0,
           glyph: "forward"
         },
         {
           id: "tank_dashboard",
+          state: "active",
           labelCount: 0,
           glyph: "dashboard"
         }
@@ -101,21 +119,25 @@ game.controller('gameController', function($scope) {
       glyphicons: [
         {
           id: "chopper_plus",
+          state: "disabled",
           labelCount: 0,
           glyph: "plus"
         },
         {
           id: "chopper_forward",
+          state: "disabled",
           labelCount: 0,
           glyph: "forward"
         },
         {
           id: "chopper_dashboard",
+          state: "disabled",
           labelCount: 0,
           glyph: "dashboard"
         },
         {
           id: "chopper_flash",
+          state: "disabled",
           labelCount: 0,
           glyph: "flash"
         }
@@ -129,21 +151,25 @@ game.controller('gameController', function($scope) {
       glyphicons: [
         {
           id: "rocket_plus",
+          state: "active",
           labelCount: 0,
           glyph: "plus"
         },
         {
           id: "rocket_forward",
+          state: "active",
           labelCount: 0,
           glyph: "forward"
         },
         {
           id: "rocket_dashboard",
+          state: "active",
           labelCount: 0,
           glyph: "dashboard"
         },
         {
           id: "rocket_flash",
+          state: "active",
           labelCount: 0,
           glyph: "flash"
         }
@@ -157,21 +183,25 @@ game.controller('gameController', function($scope) {
       glyphicons: [
         {
           id: "bomb_plus",
+          state: "disabled",
           labelCount: 0,
           glyph: "plus"
         },
         {
           id: "bomb_forward",
+          state: "disabled",
           labelCount: 0,
           glyph: "forward"
         },
         {
           id: "bomb_dashboard",
+          state: "disabled",
           labelCount: 0,
           glyph: "dashboard"
         },
         {
           id: "bomb_flash",
+          state: "disabled",
           labelCount: 0,
           glyph: "flash"
         }
@@ -185,16 +215,19 @@ game.controller('gameController', function($scope) {
       glyphicons: [
         {
           id: "builder_plus",
+          state: "active",
           labelCount: 0,
           glyph: "plus"
         },
         {
           id: "builder_forward",
+          state: "active",
           labelCount: 0,
           glyph: "forward"
         },
         {
           id: "builder_dashboard",
+          state: "active",
           labelCount: 0,
           glyph: "dashboard"
         }
@@ -208,16 +241,19 @@ game.controller('gameController', function($scope) {
       glyphicons: [
         {
           id: "healer_plus",
+          state: "disabled",
           labelCount: 0,
           glyph: "plus"
         },
         {
           id: "healer_forward",
+          state: "disabled",
           labelCount: 0,
           glyph: "forward"
         },
         {
           id: "healer_dashboard",
+          state: "disabled",
           labelCount: 0,
           glyph: "dashboard"
         }
@@ -236,11 +272,13 @@ game.controller('gameController', function($scope) {
         },
         {
           id: "wall_forward",
+          state: "active",
           labelCount: 0,
           glyph: "forward"
         },
         {
           id: "wall_dashboard",
+          state: "active",
           labelCount: 0,
           glyph: "dashboard"
         }
@@ -254,21 +292,25 @@ game.controller('gameController', function($scope) {
       glyphicons: [
         {
           id: "tower_plus",
+          state: "disabled",
           labelCount: 0,
           glyph: "plus"
         },
         {
           id: "tower_forward",
+          state: "disabled",
           labelCount: 0,
           glyph: "forward"
         },
         {
           id: "tower_dashboard",
+          state: "disabled",
           labelCount: 0,
           glyph: "dashboard"
         },
         {
           id: "tower_flash",
+          state: "disabled",
           labelCount: 0,
           glyph: "flash"
         }
