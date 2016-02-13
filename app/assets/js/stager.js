@@ -27,8 +27,8 @@ var tower_FRAMES = [
 
 //Base Frames
 var base_FRAMES = [
-    "img/sprites/base/baseBlue.png",
-    "img/sprites/base/baseRed.png"
+    "img/sprites/base/BaseBlue.png",
+    "img/sprites/base/BaseRed.png"
     ];
 
 //Bomb Frames
