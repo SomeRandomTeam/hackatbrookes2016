@@ -104,13 +104,13 @@ function parseImage (imageData) {
         if (wall) {
           mdata.nType = 'wall'
         } else if (bldg) {
-          mdata.nType = 'tower'
+          mdata.nType = 'base'
           mdata.team = 'neutral'
         } else if (tmbl) {
-          mdata.nType = 'tower'
+          mdata.nType = 'base'
           mdata.team = 'blue'
         } else if (tmyl) {
-          mdata.nType = 'tower'
+          mdata.nType = 'base'
           mdata.team = 'yellow'
         } else {
           mdata.nType = 'junction'
