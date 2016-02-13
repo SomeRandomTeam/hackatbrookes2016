@@ -11,13 +11,13 @@ Tank.create = function (team, v) {
 Tank.init = function (v) {
   Unit.init.call(this, v)
   this.position = Vector.fromObj(v)
-  this.type = 'tank'
   return this
 }
 
 Tank.toJSON = function () {
   return {
     id: this.id,
+    type: this.type,
     team: this.team,
     position: {
       x: this.position.x,
@@ -32,6 +32,7 @@ Tank.toJSON = function () {
   }
 }
 
+Tank.type = 'tank'
 Tank.buildTime = 10
 Tank.speed = 10
 Tank.maxHP = 10
