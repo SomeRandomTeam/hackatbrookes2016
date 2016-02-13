@@ -1,12 +1,4 @@
-var socket = io();
-socket.on('update', function(data) {
-  data.units.forEach(function(elem) {
-    if (!sprites[elem.id]) {
-      sprites[elem.id] = createSprite(elem.type, elem.position.x, elem.position.y, elem.direction.x, elem.direction.y);
-    }
-    sprites[elem.id] = updatePosition(sprites[elem.id], elem.position.x, elem.position.y);
-  });
-})
+
 var lasttime = new Date().getTime();
 var stage = new PIXI.Stage(0x66FF99);
 var display = PIXI.autoDetectRenderer(776, 776);
@@ -182,7 +174,17 @@ document.getElementById('frame').appendChild(display.view);
 requestAnimationFrame( animate );
 sprite = createSprite("chopper", 200, 200, true);
 var sprites = {};
-stage.addChild(sprite);
+//stage.addChild(sprite);
+var socket = io();
+socket.on('update', function(data) {
+  data.units.forEach(function(elem) {
+    if (!sprites[elem.id]) {
+      sprites[elem.id] = createSprite(elem.type, elem.position.x, elem.position.y, elem.direction.x, elem.direction.y);
+      stage.addChild(sprites[elem.id]);
+    }
+    sprites[elem.id] = updatePosition(sprites[elem.id], elem.position.x, elem.position.y);
+  });
+})
 
 frameindex = 0;
 frametime = FRAMERATE;
