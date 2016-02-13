@@ -1,6 +1,6 @@
 var socket = io();
 socket.on('update', function(data) {
-  
+
 })
 var lasttime = new Date().getTime();
 var stage = new PIXI.Stage(0x66FF99);
@@ -207,8 +207,8 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
   var SE = dir_x >= 0 && dir_y > 0;
   var SW = dir_x < 0 && dir_y > 0;
   var W = dir_x <= 0 && dir_y === 0;
+  var FRAMES;
   switch(type) {
-    var FRAMES;
     case "bomb":
       if(NW) {
         FRAMES = bomb_back_left_FRAMES;
@@ -220,7 +220,7 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
         FRAMES = bomb_front_right_FRAMES;
       } else if (SW){
         FRAMES = bomb_front_left_FRAMES;
-      } else (W){
+      } else {
         FRAMES = bomb_left_FRAMES;
       }
       break;
@@ -235,7 +235,7 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
         FRAMES = tank_front_right_FRAMES;
       } else if (SW){
         FRAMES = tank_front_left_FRAMES;
-      } else (W){
+      } else {
         FRAMES = tank_left_FRAMES;
       }
       break;
@@ -250,7 +250,7 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
         FRAMES = healer_front_right_FRAMES;
       } else if (SW){
         FRAMES = healer_front_left_FRAMES;
-      } else (W){
+      } else{
         FRAMES = healer_left_FRAMES;
       }
     break;
@@ -265,7 +265,7 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
         FRAMES = chopper_front_right_FRAMES;
       } else if (SW){
         FRAMES = chopper_front_left_FRAMES;
-      } else (W){
+      } else{
         FRAMES = chopper_left_FRAMES;
       }
       break;
@@ -280,7 +280,7 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
         FRAMES = rocket_front_right_FRAMES;
       } else if (SW){
         FRAMES = rocket_front_left_FRAMES;
-      } else (W){
+      } else {
         FRAMES = rocket_left_FRAMES;
       }
       break;
@@ -295,7 +295,7 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
         FRAMES = builder_front_right_FRAMES;
       } else if (SW){
         FRAMES = builder_front_left_FRAMES;
-      } else (W){
+      } else {
         FRAMES = builder_left_FRAMES;
       }
       break;
