@@ -19,7 +19,7 @@
     <link href="css/full.css" rel="stylesheet">
 
     <script type="text/javascript" src="/api/io/socket.io.js"></script>
-    <script type="text/javascript" src="js/crafty-min.js"></script>
+    <script type="text/javascript" src="js/pixi.min.js"></script>
 </head>
 
 <body>
@@ -54,7 +54,19 @@
     <div id="frame"> </div>
 
     <script>
-     Crafty.init(window.innerWidth, window.innerHeight - 50, document.getElementById('frame'));
+
+      var stage = new PIXI.Stage(0x66FF99);
+
+      var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight - 50);
+
+      document.body.appendChild(renderer.view);
+
+      requestAnimationFrame( animate );
+
+      function animate() {
+        requestAnimationFrame( animate );
+        renderer.render(stage);
+      }
     </script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
