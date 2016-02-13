@@ -31,10 +31,14 @@
     "errorhandler": "1.4.3",
     "express": "4.13.4",
     "forever": "0.15.1",
+    "graphlib": "2.0.0",
     "intel": "1.1.0",
+    "lodash": "4.3.0",
     "method-override": "2.3.5",
     "morgan": "1.6.1",
-    "socket.io": "1.4.5"
+    "pngparse": "2.0.1",
+    "socket.io": "1.4.5",
+    "use-strict": "1.0.1"
   },
   "devDependencies": {
     "nodemon": "1.8.1"
