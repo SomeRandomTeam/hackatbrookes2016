@@ -1,8 +1,77 @@
 var game = angular.module('game', []);
 
 game.controller('gameController', function($scope) {
+
+  $scope.plusCounter = function(parent, id) {
+    $scope.panel.forEach(function(elem) {
+      if (elem.id === parent) {
+        elem.glyphicons.forEach(function(glyphs){
+          if(glyphs.id === id) {
+            glyphs.labelCount += 1;
+          }
+        });
+      }
+    });
+  };
+
+  $scope.activateFeature = function() {
+    $scope.panel.forEach(function(elem) {
+      var sum = 0;
+      switch(elem.id) {
+        case "tank":
+          elem.glyphicons.forEach(function(glyphs) {
+            sum += glyphs.labelCount;
+          });
+          if (sum > 5) {
+            $scope.panel.forEach(function(nextElem){
+              if(nextElem.id == "chopper")
+                nextElem.blocked = "alert alert-success";
+            });
+          }
+          break;
+        case "rocket":
+          sum = 0;
+          elem.glyphicons.forEach(function(glyphs) {
+            sum += glyphs.labelCount;
+          });
+          if (sum > 5) {
+            $scope.panel.forEach(function(nextElem){
+              if(nextElem.id == "bomb")
+                nextElem.blocked = "alert alert-success";
+            });
+          }
+          break;
+        case "builder":
+          sum = 0;
+          elem.glyphicons.forEach(function(glyphs) {
+            sum += glyphs.labelCount;
+          });
+          if (sum > 5) {
+            $scope.panel.forEach(function(nextElem){
+              if(nextElem.id == "healer")
+                nextElem.blocked = "alert alert-success";
+            });
+          }
+          break;
+        case "wall":
+          sum = 0;
+          elem.glyphicons.forEach(function(glyphs) {
+            sum += glyphs.labelCount;
+          });
+          if (sum > 5) {
+            $scope.panel.forEach(function(nextElem){
+              if(nextElem.id == "tower")
+                nextElem.blocked = "alert alert-success";
+            });
+          }
+          break;
+      }
+    });
+  };
+
   $scope.panel = [
     {
+      id: "tank",
       src: "img/buttons/tankIcon.png",
       blocked: "alert alert-success",
       glyphicons: [
@@ -25,6 +94,7 @@ game.controller('gameController', function($scope) {
 
     },
     {
+      id: "chopper",
       src: "img/buttons/chopperIcon.png",
       blocked: "alert alert-danger",
       glyphicons: [
@@ -52,6 +122,7 @@ game.controller('gameController', function($scope) {
 
     },
     {
+      id: "rocket",
       src: "img/buttons/rocketIcon.png",
       blocked: "alert alert-success",
       glyphicons: [
@@ -79,6 +150,7 @@ game.controller('gameController', function($scope) {
 
     },
     {
+      id: "bomb",
       src: "img/buttons/bombIcon.png",
       blocked: "alert alert-danger",
       glyphicons: [
@@ -106,6 +178,7 @@ game.controller('gameController', function($scope) {
 
     },
     {
+      id: "builder",
       src: "img/buttons/builderIcon.png",
       blocked: "alert alert-success",
       glyphicons: [
@@ -128,6 +201,7 @@ game.controller('gameController', function($scope) {
 
     },
     {
+      id: "healer",
       src: "img/buttons/healerIcon.png",
       blocked: "alert alert-danger",
       glyphicons: [
@@ -150,6 +224,7 @@ game.controller('gameController', function($scope) {
 
     },
     {
+      id: "wall",
       src: "img/buttons/wallIcon.png",
       blocked: "alert alert-success",
       glyphicons: [
@@ -172,6 +247,7 @@ game.controller('gameController', function($scope) {
 
     },
     {
+      id: "tower",
       src: "img/buttons/towerIcon.png",
       blocked: "alert alert-danger",
       glyphicons: [
