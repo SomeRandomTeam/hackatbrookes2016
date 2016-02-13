@@ -72,7 +72,7 @@ var chopper_back_FRAMES = [
 document.body.appendChild(display.view);
 
 requestAnimationFrame( animate );
-sprite = createSprite("bomb", 100, 100, false);
+sprite = createSprite("chopper", 100, 100, true);
 stage.addChild(sprite);
 
 frameindex = 0;
