@@ -23,25 +23,16 @@ module.exports = function (io) {
       var delta = (ctime - ltime) / 1000
       game.update(delta)
       ltime = ctime
-      // console.log(JSON.stringify(game, null, 2))
+      console.log(JSON.stringify(game, null, 2))
       io.emit('update', game.toJSON())
     }
-
     gameloopIntVal = setInterval(gameloop, 1000 / 30)
+
 
     io.on('connection', function (socket) {
       sockets.push(socket)
 
-      // if (gameState.players.size === 2) {
-      //   gameloopIntVal = setTimeout(gameloop, 1000 / 30)
-      // }
-
       socket.on('disconnect', function () {
-        sockets.forEach(function (player) {
-          player.close()
-        })
-        sockets = []
-        clearInterval(gameloopIntVal)
       })
     })
   })
