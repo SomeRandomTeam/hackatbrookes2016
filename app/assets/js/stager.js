@@ -1,6 +1,11 @@
 var socket = io();
 socket.on('update', function(data) {
-
+  data.units.forEach(function(elem) {
+    if (!sprites[elem.id]) {
+      sprites[elem.id] = createSprite(elem.type, elem.position.x, elem.position.y, elem.direction.x, elem.direction.y);
+    }
+    sprites[elem.id] = updatePosition(sprites[elem.id], elem.position.x, elem.position.y);
+  });
 })
 var lasttime = new Date().getTime();
 var stage = new PIXI.Stage(0x66FF99);
@@ -177,6 +182,7 @@ document.getElementById('frame').appendChild(display.view);
 
 requestAnimationFrame( animate );
 sprite = createSprite("chopper", 200, 200, true);
+var sprites = {};
 stage.addChild(sprite);
 
 frameindex = 0;
@@ -316,4 +322,10 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
 
   newSprite.FRAMES = FRAMES;
   return newSprite;
+}
+
+function updatePosition(sprite, x, y) {
+  sprite.position.x = x;
+  sprite.position.y = y;
+  return sprite;
 }
