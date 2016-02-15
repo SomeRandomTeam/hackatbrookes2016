@@ -214,6 +214,11 @@ socket.on('update', function(data) {
       sprites[elem.id] = createBuilding(elem.type, elem.team, elem.position.x, elem.position.y, elem.direction.x, elem.direction.y);
       stage.addChild(sprites[elem.id]);
     }
+    if(sprites[elem.id].team !== elem.team) {
+      sprites[elem.id].visible = false;
+      sprites[elem.id] = createBuilding(elem.type, elem.team, elem.position.x, elem.position.y, elem.direction.x, elem.direction.y);
+      stage.addChild(sprites[elem.id]);
+    }
     sprites[elem.id] = updatePosition(sprites[elem.id], elem.position.x, elem.position.y);
     sprites[elem.id].FRAMES = updateFrames(elem.type, elem.direction.x, elem.direction.y);
   });
@@ -265,8 +270,12 @@ function createSprite(type, c_x, c_y, dir_x, dir_y) {
   return  newSprite;
 }
 
+function getTeamTextureIndex (team) {
+  return team == "yellow" ? 1 : (team == "neutral" ? 2 : 0);
+}
+
 function createBuilding(type, team, c_x, c_y, dir_x, dir_y) {
-  var index = team == "yellow" ? 1 : (team == "neutral" ? 2 : 0);
+  var index = getTeamTextureIndex(team);
   FRAMES = updateFrames(type, dir_x, dir_y);
   var newBuild = new PIXI.Sprite(PIXI.Texture.fromImage(FRAMES[index]));
   newBuild.anchor.x = 0.5;
